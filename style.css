@@ -18,7 +18,7 @@ body {
 
 #song-options {
 	background: #4DD7FA;
-	width: 10%;
+	width: 15%;
 	float: left;
 	padding: 1em;
 }
@@ -39,7 +39,7 @@ body {
 #results {
 	background: #FEFAC0;
 	float: left;
-	width: 80%;
+	width: 77.625%;
 	padding: 1em;
 }
 
@@ -61,4 +61,13 @@ body {
 
 .results-line {
 	margin-bottom: 2em;
+}
+
+.floatleft {
+	float: left;
+}
+
+.floatright {
+	float: right;
+	text-align: right;
 }
