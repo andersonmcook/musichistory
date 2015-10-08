@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang ="en">
+	<head>
+	  <meta charset="utf-8">
+	  <title>Music History pt. 1</title>
+	  <link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<nav id="navigation" class="bordered">
+			<ul>
+				<li><a href="">View Music</a></li>
+				<li>|</li>
+				<li><a href="">Add Music</a></li>
+				<li>|</li>
+				<li><a href="">Profile</a></li>
+			</ul>
+		</nav>
+		<form action="index.html" method="get" id="song-options" class="bordered">
+			<label>Song length:<input type="range" name="song-length" class="displayblock"></label>
+			<label>Artist:<select name="artist" class="displayblock">
+				<option value="options">Options</option>
+			</select></label>
+			<label>Album:<select name="album" class="displayblock">
+				<option value="options">Options</option>
+			</select></label>
+			<p id="genre-title">Genre:</p>
+			<label><input type="checkbox" name="genre" value="genreRock">Rock</label>
+			<label><input type="checkbox" name="genre" value="genrePop">Pop</label>
+			<label><input type="checkbox" name="genre" value="genreBlues">Blues</label>
+			<label><input type="checkbox" name="genre" value="genreClassical">Classical</label>
+			<label><input type="checkbox" name="genre" value="genreJazz">Jazz</label>
+			<label><input type="checkbox" name="genre" value="genreHipHop">Hip hop</label>
+			<input type="submit" value="Filter" class="displayblock">
+		</form>
+		<div id="results" class="bordered">
+			<p class="song-name">Song Name</p>
+			<span class="results-artist">Artist name</span>
+			<span class="results-divider">|</span>
+			<span class="results-album">Album name</span>
+			<span class="results-divider">|</span>
+			<span class="results-genre">Genre</span>
+			<p class="song-name">Song Name</p>
+			<span class="results-artist">Artist name</span>
+			<span class="results-divider">|</span>
+			<span class="results-album">Album name</span>
+			<span class="results-divider">|</span>
+			<span class="results-genre">Genre</span>
+			<p class="song-name">Song Name</p>
+			<span class="results-artist">Artist name</span>
+			<span class="results-divider">|</span>
+			<span class="results-album">Album name</span>
+			<span class="results-divider">|</span>
+			<span class="results-genre">Genre</span>
+			<p class="song-name">Song Name</p>
+			<span class="results-artist">Artist name</span>
+			<span class="results-divider">|</span>
+			<span class="results-album">Album name</span>
+			<span class="results-divider">|</span>
+			<span class="results-genre">Genre</span>
+		</div>
+	</body>
+</html>

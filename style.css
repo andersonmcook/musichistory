@@ -1,0 +1,43 @@
+body {
+	font-family: sans-serif;
+}
+
+#navigation {
+	background: #FFB4B0;
+}
+
+#navigation ul li {
+	list-style-type: none;
+	display: inline;
+}
+
+#song-options {
+	background: #4DD7FA;
+	width: 10%;
+	float: left;
+}
+
+#genre-title {
+	margin-bottom: .5em;
+}
+
+#results {
+	background: #FEFAC0;
+	float: left;
+	width: 80%;
+}
+
+.song-name {
+	font-size: 2em;
+	color: #785616;
+}
+
+.bordered {
+	border: .125em solid black;
+	margin: .5em;
+	padding: 1em;
+}
+
+.displayblock {
+	display: block;
+}
