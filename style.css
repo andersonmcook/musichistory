@@ -63,11 +63,11 @@ body {
 	margin-bottom: 2em;
 }
 
-.floatleft {
+#left-genres {
 	float: left;
 }
 
-.floatright {
+#right-genres {
 	float: right;
-	text-align: right;
+	text-align: left;
 }

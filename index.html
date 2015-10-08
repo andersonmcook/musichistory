@@ -35,12 +35,16 @@
 					<option value="egyptrixxAlbum">A/B Til Infinity</option>
 				</select></label>
 				<p id="genre-title">Genre:</p>
-					<label class="floatleft"><input type="checkbox" name="genre" value="genreBlackMetal">Black Metal</label>
-					<label class="floatright"><input type="checkbox" name="genre" value="genreDeathMetal">Death Metal</label>
-					<label class="floatleft"><input type="checkbox" name="genre" value="genreGrindcore">Grindcore</label>
-					<label class="floatright"><input type="checkbox" name="genre" value="genreElectronic">Electronic</label>
-					<label class="floatleft"><input type="checkbox" name="genre" value="genreHardcore">Hardcore</label>
-					<label class="floatright"><input type="checkbox" name="genre" value="genreHipHop">Hip hop</label>
+					<div id="left-genres">
+						<label class="displayblock"><input type="checkbox" name="genre" value="genreBlackMetal">Black Metal</label>
+						<label class="displayblock"><input type="checkbox" name="genre" value="genreGrindcore">Grindcore</label>
+						<label class="displayblock"><input type="checkbox" name="genre" value="genreHardcore">Hardcore</label>
+					</div>
+					<div id="right-genres">
+						<label class="displayblock"><input type="checkbox" name="genre" value="genreDeathMetal">Death Metal</label>
+						<label class="displayblock"><input type="checkbox" name="genre" value="genreElectronic">Electronic</label>
+						<label class="displayblock"><input type="checkbox" name="genre" value="genreHipHop">Hip hop</label>
+					</div>	
 				<input type="submit" value="Filter" class="displayblock submit">
 			</form>
 			<div id="results" class="bordered">
