@@ -3,12 +3,14 @@ body {
 }
 
 #container {
-	max-width: 100%;
+	margin: 1em auto;
+	width: 65em;
 }
 
 #navigation {
 	background: #FFB4B0;
 	padding: 0;
+	width: 61.25em;
 }
 
 #navigation ul li {
@@ -18,9 +20,11 @@ body {
 
 #song-options {
 	background: #4DD7FA;
-	width: 15%;
+	/* width: 15%; */
+	width: 14em;
 	float: left;
 	padding: 1em;
+	height: 16em;
 }
 
 .overflow {
@@ -33,13 +37,15 @@ body {
 
 .submit {
 	font-size: 2em;
-	margin: .5em 0 0;
+	margin: 2.5em 0 0;
 }
 
 #results {
 	background: #FEFAC0;
 	float: left;
-	width: 77.625%;
+	/* width: 77.625%; */
+	width: 42em;
+	height: 16em;
 	padding: 1em;
 }
 
@@ -69,5 +75,4 @@ body {
 
 #right-genres {
 	float: right;
-	text-align: left;
 }
