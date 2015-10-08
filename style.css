@@ -55,6 +55,10 @@ body {
 	margin: 0 0 .25em;
 }
 
+.results-divider {
+	margin: 0 .5em;
+}
+
 .bordered {
 	border: .125em solid black;
 	margin: .5em;
