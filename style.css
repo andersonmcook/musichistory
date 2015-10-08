@@ -38,6 +38,7 @@ body {
 .submit {
 	font-size: 2em;
 	margin: 2.5em 0 0;
+	color: black;
 }
 
 #results {
