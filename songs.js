@@ -40,6 +40,6 @@ for (var i = 0; i < songs.length; i++) {
 	songs[i] = songs[i].replace(/by/g, "");
 	output = output + "<p>" + songs[i] + "</p>";
 }
-console.log("songs", songs);
+console.log("songs with characters replaced", songs);
 
 results.innerHTML = output;
