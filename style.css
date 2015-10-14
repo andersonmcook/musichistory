@@ -44,11 +44,10 @@ body {
 #results {
 	background: #FEFAC0;
 	float: left;
-	/* width: 77.625%; */
-	width: 42em;
-	height: 16em;
-	padding: 1em;
+	padding: 1%;
+	width: 60%;
 }
+
 
 .song-name {
 	font-size: 2em;
@@ -72,6 +71,7 @@ body {
 
 .results-line {
 	margin-bottom: 2em;
+	flex-direction: row;
 }
 
 #left-genres {
