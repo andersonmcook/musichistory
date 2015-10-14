@@ -18,8 +18,9 @@ body {
 	padding: 0;
 	margin: 0;
 	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
+	-webkit-flex-direction: row;
+	-webkit-flex-wrap: wrap;
+	/*flex: 1 100%;*/
 }
 
 #navigation {
@@ -30,9 +31,10 @@ body {
 nav {
 	background: #FFB4B0;
 	padding: 0;
-	width: 100%;
+	flex: 1 100%;
 	top: 0;
 	left: 0;
+	width: 98%;
 }
 
 nav ul li {
@@ -44,6 +46,17 @@ nav ul li {
 	visibility: hidden;
 }
 
+#songs-and-options {
+	flex: 1 100%;
+	width: 100px;
+} 
+
+#song-options-div {
+	flex-grow: 1;
+	width: 200px;
+	padding: 0;
+}
+
 #song-options {
 	background: #4DD7FA;
 	/* width: 15%; 
@@ -52,15 +65,12 @@ nav ul li {
 	padding: 1em;
 	height: 16em;
 	*/
-	flex-direction: row;
-	flex-grow: 1;
-	flex: 1 100%;
-	width: 100px;
+	padding: 1em;
 }
 
-.overflow {
+/* .overflow {
 	overflow: hidden;
-}
+} */
 
 #genre-title {
 	margin-bottom: .5em;
@@ -74,13 +84,16 @@ nav ul li {
 
 #results {
 	background: #FEFAC0;
-	flex: 1 100%;
-	flex-direction: row;
-	flex-grow: 1;
+	flex-grow: 2;
 	width: 100px;
+	padding: 1em;
 	/*float: left;
 	padding: 1%;
 	width: 60%;*/
+}
+
+.song-result:not(:last-child) {
+	margin-bottom: 1em;
 }
 
 #results .song-result:nth-of-type(2n+1) {
@@ -89,6 +102,10 @@ nav ul li {
 
 #results .song-result:nth-of-type(2n+0) {
 	background: seashell;
+}
+
+#results .song-result:first-child {
+	font-weight: bold;
 }
 
 .song-name {
@@ -103,7 +120,7 @@ nav ul li {
 
 .bordered {
 	border: .125em solid black;
-	margin: .5em;
+	margin: .5em; 
 }
 
 /*.displayblock {
@@ -113,7 +130,7 @@ nav ul li {
 
 .results-line {
 	margin-bottom: 2em;
-	flex-direction: row;
+	/*-webkit-flex-direction: row; */
 }
 
 #left-genres {
