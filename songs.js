@@ -100,7 +100,7 @@ console.log("albumTitles", albumTitles);
 var bands = [];
 
 for (var i = 0; i < songs.length; i++) {
-		band = songs[i].slice(songs[i].indexOf("by") + 2, songs[i].indexOf("on") - 1);
+		band = songs[i].slice(songs[i].indexOf("by") + 3, songs[i].indexOf("album") - 8);
 		console.log("band", band);
 		bands.push(band);
 }
@@ -110,6 +110,10 @@ console.log("bands", bands);
 //console.log("songTitle", songTitle);
 //console.log("firstSongName", firstSongName);
 //firstSongName.innerHTML = "<p>" + firstSong + "</p>";
+
+for (var i = 0; i < songs.length; i++) {
+	
+}
 
 results.innerHTML = output;
 
