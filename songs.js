@@ -73,7 +73,7 @@ for (var i = 0; i < songs.length; i++) {
 	songs[i] = songs[i].replace(/\(/g, "");
 	//songs[i] = songs[i].replace(/by/g, "");
 
-	output = output + "<p>" + songs[i] + "</p>";
+	//output = output + "<p>" + songs[i] + "</p>";
 }
 console.log("songs with characters replaced", songs);
 
@@ -112,7 +112,10 @@ console.log("bands", bands);
 //firstSongName.innerHTML = "<p>" + firstSong + "</p>";
 
 for (var i = 0; i < songs.length; i++) {
-	
+	output = output + "<p class='song-name'>" + songTitles[i] + "</p>";
+	output = output + "<span class='results-line results-artist'>" + bands[i] + "</span>";
+	output = output + "<span class='results-line results-divider'>" + "|" + "</span>";
+	output = output + "<span class='results-line results-album'>" + albumTitles[i] + "</span>";
 }
 
 results.innerHTML = output;
