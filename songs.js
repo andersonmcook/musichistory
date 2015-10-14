@@ -112,10 +112,10 @@ console.log("bands", bands);
 //firstSongName.innerHTML = "<p>" + firstSong + "</p>";
 
 for (var i = 0; i < songs.length; i++) {
-	output = output + "<p class='song-name'>" + songTitles[i] + "</p>";
+	output = output + "<div class='song-result'><p class='song-name'>" + songTitles[i] + "</p>";
 	output = output + "<span class='results-line results-artist'>" + bands[i] + "</span>";
 	output = output + "<span class='results-line results-divider'>" + "|" + "</span>";
-	output = output + "<span class='results-line results-album'>" + albumTitles[i] + "</span>";
+	output = output + "<span class='results-line results-album'>" + albumTitles[i] + "</span></div>";
 }
 
 results.innerHTML = output;

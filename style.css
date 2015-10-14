@@ -1,30 +1,61 @@
+/*Using your new CSS skills, you'll build even better looking music history pages.
+
+1. Use the Flexible Layout Box model to ensure that both the form section and the content section are the same height.
+2. The entire container for the even songs (plus its details) should have a background color of Sea Shell 
+(SeaShell or #FFF5EE)
+3. The entire container for the odd songs (plus its details) should have a background color of Mint Cream 
+(MintCream or #F5FFFA)
+4. The first song container should have bold text.
+5. Set the navigation bar's position so that it's always on the top of the page, even if you scroll down. 
+To ensure this works, you can just add some div tags at the bottom of the page that add enough text that
+would force you to scroll the browser.
+*/
 body {
 	font-family: sans-serif;
 }
 
 #container {
-	margin: 1em auto;
-	width: 65em;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
 }
 
 #navigation {
-	background: #FFB4B0;
-	padding: 0;
-	width: 61.25em;
+	position: fixed;
+	/*width: 61.25em;*/
 }
 
-#navigation ul li {
+nav {
+	background: #FFB4B0;
+	padding: 0;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
+nav ul li {
 	list-style-type: none;
 	display: inline;
 }
 
+.hidden {
+	visibility: hidden;
+}
+
 #song-options {
 	background: #4DD7FA;
-	/* width: 15%; */
+	/* width: 15%; 
 	width: 14em;
 	float: left;
 	padding: 1em;
 	height: 16em;
+	*/
+	flex-direction: row;
+	flex-grow: 1;
+	flex: 1 100%;
+	width: 100px;
 }
 
 .overflow {
@@ -37,17 +68,28 @@ body {
 
 .submit {
 	font-size: 2em;
-	margin: 2.5em 0 0;
+/*	margin: 2.5em 0 0; */
 	color: black;
 }
 
 #results {
 	background: #FEFAC0;
-	float: left;
+	flex: 1 100%;
+	flex-direction: row;
+	flex-grow: 1;
+	width: 100px;
+	/*float: left;
 	padding: 1%;
-	width: 60%;
+	width: 60%;*/
 }
 
+#results .song-result:nth-of-type(2n+1) {
+	background: mintcream;
+}
+
+#results .song-result:nth-of-type(2n+0) {
+	background: seashell;
+}
 
 .song-name {
 	font-size: 2em;
@@ -64,10 +106,10 @@ body {
 	margin: .5em;
 }
 
-.displayblock {
+/*.displayblock {
 	display: block;
 	width: 100%;
-}
+}*/
 
 .results-line {
 	margin-bottom: 2em;
@@ -75,9 +117,10 @@ body {
 }
 
 #left-genres {
-	float: left;
+/*	float: left; */
 }
 
 #right-genres {
-	float: right;
+/*	float: right; */
 }
+
