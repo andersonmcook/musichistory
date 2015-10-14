@@ -14,7 +14,7 @@ body {
 	font-family: sans-serif;
 }
 
-#container {
+#flex-container {
 	padding: 0;
 	margin: 0;
 	display: flex;
@@ -48,16 +48,18 @@ nav ul li {
 
 #songs-and-options {
 	flex: 1 100%;
-	width: 100px;
+	width: 1px;
 } 
 
 #song-options-div {
 	flex-grow: 1;
-	width: 200px;
+	width: 1px;
 	padding: 0;
+
+
 }
 
-#song-options {
+.form-style {
 	background: #4DD7FA;
 	/* width: 15%; 
 	width: 14em;
@@ -68,12 +70,16 @@ nav ul li {
 	padding: 1em;
 }
 
+/*.form-style * {
+	padding: 1em 0;
+}*/
+
 /* .overflow {
 	overflow: hidden;
 } */
 
 #genre-title {
-	margin-bottom: .5em;
+	margin: 0;
 }
 
 .submit {
@@ -118,15 +124,19 @@ nav ul li {
 	margin: 0 .5em;
 }
 
+label {
+	margin-top: 1em;
+}
+
 .bordered {
 	border: .125em solid black;
 	margin: .5em; 
 }
 
-/*.displayblock {
-	display: block;
-	width: 100%;
-}*/
+.displayblock {
+	/*display: block;*/
+	width: 100%; 
+}
 
 .results-line {
 	margin-bottom: 2em;

@@ -60,7 +60,7 @@ songs.unshift("Blooming Amygdala - by Dendritic Arbor on the album Romantic Love
 console.log("with added songs", songs);
 
 var results = document.getElementById("results");
-var firstSongName = document.getElementById("first-song-name");
+// var firstSongName = document.getElementById("first-song-name");
 var output = "";
 var songTitle = "";
 var albumTitle = "";

@@ -6,7 +6,6 @@
 	  <link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
-		<div id="container">
 			<nav id="navigation" class="bordered">
 				<ul>
 					<li><a href="#">View Music</a></li>
@@ -25,8 +24,8 @@
 					<li><a href="#">Profile</a></li>
 				</ul>
 			</nav>
-				<div id="song-options-div">
-					<form action="index.html" method="get" id="song-options" class="bordered">
+		<div id="flex-container">
+				<div id="song-options-div" class="bordered form-style">
 						<label>Song length:<input type="range" name="song-length" class="displayblock"></label>
 						<label>Artist:<select name="artist" class="displayblock">
 							<!--<option value="options">Options</option>-->
@@ -56,10 +55,9 @@
 								<label class="displayblock"><input type="checkbox" name="genre" value="genreHipHop">Hip hop</label>
 							</div>	
 						<input type="submit" value="Filter" class="displayblock submit">
-					</form>
 				</div>
 				<div id="results" class="bordered">
-					<p id="first-song-name" class="song-name"></p>
+					<!--<p id="first-song-name" class="song-name"></p> -->
 				<!--
 					<p class="song-name">Exordium</p>
 					<span class="results-line results-artist">Alraune</span>
