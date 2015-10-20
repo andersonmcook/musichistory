@@ -68,6 +68,18 @@ Once the user fills out the song form and clicks the add button, you should coll
 
 
 
+// var songOptions = document.getElementById("song-options-div");
+// var viewMusicLink = document.getElementById("view-music-link");
+// var addMusicLink = document.getElementById("add-music-link");
+// var profileLink = document.getElementById("profile-link");
+
+
+
+
+// viewMusicLink.addEventSelector("click", function () {
+// 	songOptions.classList.toggle("display-none");
+// });
+
 var songs = [];
 
 songs[songs.length] = "Legs > by Z*ZTop on the album Eliminator";
