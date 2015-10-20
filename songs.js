@@ -68,17 +68,25 @@ Once the user fills out the song form and clicks the add button, you should coll
 
 
 
-// var songOptions = document.getElementById("song-options-div");
-// var viewMusicLink = document.getElementById("view-music-link");
-// var addMusicLink = document.getElementById("add-music-link");
-// var profileLink = document.getElementById("profile-link");
+var songOptions = document.getElementById("song-options-div");
+var results = document.getElementById("results");
+
+var viewMusicLink = document.getElementById("view-music-link");
+var addMusicLink = document.getElementById("add-music-link");
+var profileLink = document.getElementById("profile-link");
 
 
 
 
-// viewMusicLink.addEventSelector("click", function () {
-// 	songOptions.classList.toggle("display-none");
-// });
+viewMusicLink.addEventListener("click", function () {
+	songOptions.classList.add("display-none");
+	results.classList.remove("display-none");
+});
+
+addMusicLink.addEventListener("click", function () {
+	results.classList.add("display-none");
+	songOptions.classList.remove("display-none");
+});
 
 var songs = [];
 
@@ -93,7 +101,6 @@ songs.unshift("Blooming Amygdala - by Dendritic Arbor on the album Romantic Love
 
 console.log("with added songs", songs);
 
-var results = document.getElementById("results");
 // var firstSongName = document.getElementById("first-song-name");
 var output = "";
 var songTitle = "";
