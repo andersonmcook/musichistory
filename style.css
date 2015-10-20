@@ -14,14 +14,13 @@ body {
 	font-family: sans-serif;
 }
 
-#flex-container {
+/*#flex-container {
 	padding: 0;
 	margin: 0;
 	display: flex;
 	-webkit-flex-direction: row;
 	-webkit-flex-wrap: wrap;
-	/*flex: 1 100%;*/
-}
+}*/
 
 #navigation {
 	position: fixed;
@@ -31,7 +30,7 @@ body {
 nav {
 	background: #FFB4B0;
 	padding: 0;
-	flex: 1 100%;
+	/*flex: 1 100%;*/
 	top: 0;
 	left: 0;
 	width: 98%;
@@ -47,14 +46,15 @@ nav ul li {
 }
 
 #songs-and-options {
-	flex: 1 100%;
-	width: 1px;
+	/*flex: 1 100%;*/
+	width: 400px;
 } 
 
 #song-options-div {
-	flex-grow: 1;
-	width: 1px;
-	padding: 0;
+	/*flex-grow: 1;*/
+	width: 300px;
+	float: left;
+	padding: .25em;
 
 
 }
@@ -79,20 +79,21 @@ nav ul li {
 } */
 
 #genre-title {
-	margin: 0;
+	margin: .5em;
 }
 
-.submit {
+/*.submit {
 	font-size: 2em;
-/*	margin: 2.5em 0 0; */
+	margin: 2.5em 0 0; 
 	color: black;
-}
+}*/
 
 #results {
 	background: #FEFAC0;
-	flex-grow: 2;
-	width: 100px;
+	/*flex-grow: 2;*/
+	/*width: 600px;*/
 	padding: 1em;
+	float: left;
 	/*float: left;
 	padding: 1%;
 	width: 60%;*/
@@ -124,8 +125,13 @@ nav ul li {
 	margin: 0 .5em;
 }
 
-label {
-	margin-top: 1em;
+/*label {
+	margin-top: .5em;
+}*/
+
+.smaller-margin {
+	display: block;
+	margin-top: 0;
 }
 
 .bordered {
@@ -134,8 +140,9 @@ label {
 }
 
 .displayblock {
-	/*display: block;*/
-	width: 100%; 
+	display: block;
+	/*width: 75%;*/
+	margin: .25em 0; 
 }
 
 .results-line {
@@ -143,11 +150,25 @@ label {
 	/*-webkit-flex-direction: row; */
 }
 
-#left-genres {
-/*	float: left; */
+select {
+	font-size: 1em;
+	border-color: #999;
+	width: 100%;
 }
 
-#right-genres {
-/*	float: right; */
+input[type=text] {
+	font-size: 1em;
+	margin-left: .5em;
 }
 
+input[type=range] {
+	width: 100%;
+}
+
+button {
+	font-size: 1em;
+}
+
+.center {
+	margin: auto;
+}

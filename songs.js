@@ -46,6 +46,28 @@ results.innerHTML = output;
 */
 //testing things without breaking the original
 
+
+/*
+NEW INSTRUCTIONS FOR VERSION4
+
+Time to make Music History into a single page application.
+
+In the navigation bar, make sure you have two links labeled "List Music", and "Add Music".
+Add a DOM element that contains some input fields for the user to enter in the name of a song, 
+	the artist for the song, and the album. 
+	You do not need to enclose them in a <form> element because we're not actually submitting this form anywhere.
+Add a <button> element labeled "Add".
+Now, the entire container for the form should not be displayed when the user first visits your page. 
+	The song list with the corresponding form should be visible.
+When the user clicks on "Add Music", the list view should be hidden, and the music form should show.
+When the user clicks on "List Music", the music form should be hidden, and the list view should show.
+Once the user fills out the song form and clicks the add button, you should collect all values from the input fields,
+	add the song to your array of songs, and update the song list in the DOM.
+*/
+
+
+
+
 var songs = [];
 
 songs[songs.length] = "Legs > by Z*ZTop on the album Eliminator";

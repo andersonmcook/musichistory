@@ -26,35 +26,39 @@
 			</nav>
 		<div id="flex-container">
 				<div id="song-options-div" class="bordered form-style">
-						<label>Song length:<input type="range" name="song-length" class="displayblock"></label>
-						<label>Artist:<select name="artist" class="displayblock">
-							<!--<option value="options">Options</option>-->
-							<option value="alraune">Alraune</option>
-							<option value="baringTeeth">Baring Teeth</option>
-							<option value="converge">Converge</option>
-							<option value="dendriticArbor">Dendritic Arbor</option>
-							<option value="egyptrixx">Egyptrixx</option>
-						</select></label>
-						<label>Album:<select name="album" class="displayblock">
-							<!-- <option value="options">Options</option> -->
-							<option value="alrauneAlbum">The Process of Self-Immolation</option>
-							<option value="baringTeethAlbum">Ghost Chorus Among The Ruins</option>
-							<option value="convergeAlbum">When Forever Comes Crashing</option>
-							<option value="dendriticArborAlbum">Romantic Love</option>
-							<option value="egyptrixxAlbum">A/B Til Infinity</option>
-						</select></label>
-						<p id="genre-title">Genre:</p>
-							<div id="left-genres">
-								<label class="displayblock"><input type="checkbox" name="genre" value="genreBlackMetal">Black Metal</label>
-								<label class="displayblock"><input type="checkbox" name="genre" value="genreGrindcore">Grindcore</label>
-								<label class="displayblock"><input type="checkbox" name="genre" value="genreHardcore">Hardcore</label>
-							</div>
-							<div id="right-genres">
-								<label class="displayblock"><input type="checkbox" name="genre" value="genreDeathMetal">Death Metal</label>
-								<label class="displayblock"><input type="checkbox" name="genre" value="genreElectronic">Electronic</label>
-								<label class="displayblock"><input type="checkbox" name="genre" value="genreHipHop">Hip hop</label>
-							</div>	
-						<input type="submit" value="Filter" class="displayblock submit">
+					<label class="displayblock">Song:<input name="song-name-input" type="text" id="song-name-input"></label>
+					<label class="displayblock">Artist:<input name="artist-name-input" type="text" id="artist-name-input"></label>
+					<label class="displayblock">Album:<input name="album-name-input" type="text" id="album-name-input"></label>
+					<button class="displayblock center" name="add">Add</button>
+					<label class="displayblock">Song length:<input type="range" name="song-length" class="displayblock center"></label>
+					<label class="displayblock">Artist:<select name="artist" class="displayblock center">
+						<!--<option value="options">Options</option>-->
+						<option value="alraune">Alraune</option>
+						<option value="baringTeeth">Baring Teeth</option>
+						<option value="converge">Converge</option>
+						<option value="dendriticArbor">Dendritic Arbor</option>
+						<option value="egyptrixx">Egyptrixx</option>
+					</select></label>
+					<label class="displayblock">Album:<select name="album" class="displayblock center">
+						<!-- <option value="options">Options</option> -->
+						<option value="alrauneAlbum">The Process of Self-Immolation</option>
+						<option value="baringTeethAlbum">Ghost Chorus Among The Ruins</option>
+						<option value="convergeAlbum">When Forever Comes Crashing</option>
+						<option value="dendriticArborAlbum">Romantic Love</option>
+						<option value="egyptrixxAlbum">A/B Til Infinity</option>
+					</select></label>
+					<p id="genre-title">Genre:</p>
+						<!-- <div id="left-genres"> -->
+							<label class="smaller-margin"><input type="checkbox" name="genre" value="genreBlackMetal">Black Metal</label>
+							<label class="smaller-margin"><input type="checkbox" name="genre" value="genreGrindcore">Grindcore</label>
+							<label class="smaller-margin"><input type="checkbox" name="genre" value="genreHardcore">Hardcore</label>
+						<!-- </div> -->
+						<!-- <div id="right-genres"> -->
+							<label class="smaller-margin"><input type="checkbox" name="genre" value="genreDeathMetal">Death Metal</label>
+							<label class="smaller-margin"><input type="checkbox" name="genre" value="genreElectronic">Electronic</label>
+							<label class="smaller-margin"><input type="checkbox" name="genre" value="genreHipHop">Hip hop</label>
+						<!-- </div>	 -->
+					<button class="displayblock center">Filter</button>
 				</div>
 				<div id="results" class="bordered">
 					<!--<p id="first-song-name" class="song-name"></p> -->
