@@ -75,14 +75,14 @@ var viewMusicLink = document.getElementById("view-music-link");
 var addMusicLink = document.getElementById("add-music-link");
 var profileLink = document.getElementById("profile-link");
 
+var formAddButton = document.getElementById("form-add-button");
 
-
-
+// when view music is clicked, hides song options
 viewMusicLink.addEventListener("click", function () {
 	songOptions.classList.add("display-none");
 	results.classList.remove("display-none");
 });
-
+// when add music is clicked, hides song results
 addMusicLink.addEventListener("click", function () {
 	results.classList.add("display-none");
 	songOptions.classList.remove("display-none");
@@ -118,6 +118,27 @@ for (var i = 0; i < songs.length; i++) {
 }
 console.log("songs with characters replaced", songs);
 
+// add in new songs, artists, albums
+
+var songNameInput = document.getElementById("song-name-input");
+var artistNameInput = document.getElementById("artist-name-input");
+var albumNameInput = document.getElementById("album-name-input");
+
+
+var formAdd = function () {
+	songs.unshift(songNameInput.value + " - by " + artistNameInput.value + " on the album " + albumNameInput.value);
+	console.log("songs", songs);
+};
+
+// watch for add button to be pressed
+
+//formAddButton.addEventListener("click", formAdd);
+
+// var yark = document.querySelector("button[name=add]");
+// yark.addEventListener("click", formAdd);
+
+//
+
 var songTitles = [];
 
 for (var i = 0; i < songs.length; i++) {
@@ -152,14 +173,29 @@ console.log("bands", bands);
 //console.log("firstSongName", firstSongName);
 //firstSongName.innerHTML = "<p>" + firstSong + "</p>";
 
+var writeToResults = function () {
 for (var i = 0; i < songs.length; i++) {
 	output = output + "<div class='song-result'><p class='song-name'>" + songTitles[i] + "</p>";
 	output = output + "<span class='results-line results-artist'>" + bands[i] + "</span>";
 	output = output + "<span class='results-line results-divider'>" + "|" + "</span>";
 	output = output + "<span class='results-line results-album'>" + albumTitles[i] + "</span></div>";
 }
-
 results.innerHTML = output;
+};
+
+writeToResults();
+formAddButton.addEventListener("click", formAdd);
+
+var addToResults = function () {
+	output = output + "<div class='song-result'><p class='song-name'>" + songNameInput.value + "</p>";
+	output = output + "<span class='results-line results-artist'>" + artistNameInput.value + "</span>";
+	output = output + "<span class='results-line results-divider'>" + "|" + "</span>";
+	output = output + "<span class='results-line results-album'>" + albumNameInput.value + "</span></div>";
+	results.innerHTML = output;
+};
+
+formAddButton.addEventListener("click", addToResults);
+//writeToResults();
 
 
 
