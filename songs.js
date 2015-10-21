@@ -201,6 +201,9 @@ var addToResults = function () {
 	addedSong += "<span class='results-line results-album'>" + albumNameInput.value + "</span></div>";
 	//results.innerHTML = output;
 	results.insertAdjacentHTML("afterbegin", addedSong);
+	songNameInput.value = "";
+	artistNameInput.value = "";
+	albumNameInput.value = "";
 	addMusic.classList.add("display-none");
 	songOptions.classList.remove("display-none");
 	results.classList.remove("display-none");
