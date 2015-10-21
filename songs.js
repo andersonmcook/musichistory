@@ -174,24 +174,26 @@ console.log("bands", bands);
 //firstSongName.innerHTML = "<p>" + firstSong + "</p>";
 
 var writeToResults = function () {
-for (var i = 0; i < songs.length; i++) {
-	output = output + "<div class='song-result'><p class='song-name'>" + songTitles[i] + "</p>";
-	output = output + "<span class='results-line results-artist'>" + bands[i] + "</span>";
-	output = output + "<span class='results-line results-divider'>" + "|" + "</span>";
-	output = output + "<span class='results-line results-album'>" + albumTitles[i] + "</span></div>";
-}
-results.innerHTML = output;
+	for (var i = 0; i < songs.length; i++) {
+		output += "<div class='song-result'><p class='song-name'>" + songTitles[i] + "</p>";
+		output += "<span class='results-line results-artist'>" + bands[i] + "</span>";
+		output += "<span class='results-line results-divider'>" + "|" + "</span>";
+		output += "<span class='results-line results-album'>" + albumTitles[i] + "</span></div>";
+	}
+	results.innerHTML = output;
 };
 
 writeToResults();
 formAddButton.addEventListener("click", formAdd);
 
 var addToResults = function () {
-	output = output + "<div class='song-result'><p class='song-name'>" + songNameInput.value + "</p>";
-	output = output + "<span class='results-line results-artist'>" + artistNameInput.value + "</span>";
-	output = output + "<span class='results-line results-divider'>" + "|" + "</span>";
-	output = output + "<span class='results-line results-album'>" + albumNameInput.value + "</span></div>";
-	results.innerHTML = output;
+	var addedSong = "";
+	addedSong += "<div class='song-result'><p class='song-name'>" + songNameInput.value + "</p>";
+	addedSong += "<span class='results-line results-artist'>" + artistNameInput.value + "</span>";
+	addedSong += "<span class='results-line results-divider'>" + "|" + "</span>";
+	addedSong += "<span class='results-line results-album'>" + albumNameInput.value + "</span></div>";
+	//results.innerHTML = output;
+	results.insertAdjacentHTML("afterbegin", addedSong);
 };
 
 formAddButton.addEventListener("click", addToResults);
