@@ -70,6 +70,7 @@ Once the user fills out the song form and clicks the add button, you should coll
 
 var songOptions = document.getElementById("song-options-div");
 var results = document.getElementById("results");
+var addMusic = document.getElementById("add-music");
 
 var viewMusicLink = document.getElementById("view-music-link");
 var addMusicLink = document.getElementById("add-music-link");
@@ -79,13 +80,15 @@ var formAddButton = document.getElementById("form-add-button");
 
 // when view music is clicked, hides song options
 viewMusicLink.addEventListener("click", function () {
-	songOptions.classList.add("display-none");
+	songOptions.classList.remove("display-none");
 	results.classList.remove("display-none");
+	addMusic.classList.add("display-none");
 });
 // when add music is clicked, hides song results
 addMusicLink.addEventListener("click", function () {
+	addMusic.classList.remove("display-none");
 	results.classList.add("display-none");
-	songOptions.classList.remove("display-none");
+	songOptions.classList.add("display-none");
 });
 
 var songs = [];
@@ -194,6 +197,9 @@ var addToResults = function () {
 	addedSong += "<span class='results-line results-album'>" + albumNameInput.value + "</span></div>";
 	//results.innerHTML = output;
 	results.insertAdjacentHTML("afterbegin", addedSong);
+	songOptions.classList.add("display-none");
+	results.classList.remove("display-none");
+
 };
 
 formAddButton.addEventListener("click", addToResults);
