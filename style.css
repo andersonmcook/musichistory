@@ -212,14 +212,20 @@ button {
 	margin: auto;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 750px) {
+	#song-options-div {
+		/*padding: 1em 4em;*/
+		/*width: 100%;*/
+		box-sizing: border-box;
+		margin: 0 1em;
+		float: none;
+	}
+
 	#results {
 		margin: 1em 0 0 0;
 		clear: both;
-	}
-
-	#song-options-div {
-		padding: 1em 4em;
+		width: 100%;
+		box-sizing: border-box;
 	}
 
 	nav ul {
