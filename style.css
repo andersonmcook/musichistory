@@ -12,6 +12,8 @@ would force you to scroll the browser.
 */
 body {
 	font-family: sans-serif;
+	padding: 0;
+	margin: 0;
 }
 
 #flex-container {
@@ -37,6 +39,8 @@ nav {
 nav ul li {
 	list-style-type: none;
 	display: inline;
+	color: white;
+	margin-right: .25em;
 }
 
 /*nav ul li:nth-of-type(2n + 0) {
@@ -76,6 +80,13 @@ nav ul li a {
 	margin: 2.5em auto 0;
 }
 
+#error-message {
+	color: red;
+	padding: 1em;
+	background: pink;
+	text-align: center;
+}
+
 /*.form-style {
 	background: #4DD7FA;
 	 width: 15%; 
@@ -110,7 +121,7 @@ nav ul li a {
 	/*flex-grow: 2;*/
 	/*width: 600px;*/
 	padding: 1em;
-	float: left;
+	float: right;
 	/*float: left;
 	padding: 1%;
 	width: 60%;*/
@@ -118,6 +129,12 @@ nav ul li a {
 
 .song-result {
 	padding: .25em .5em;
+}
+
+.song-name {
+	font-size: 2em;
+	color: whitesmoke;
+	margin: 0 0 .25em;
 }
 
 .song-result:not(:last-child) {
@@ -134,13 +151,9 @@ nav ul li a {
 
 #results .song-result:first-child {
 	font-weight: bold;
+	background: tomato;
 }
 
-.song-name {
-	font-size: 2em;
-	color: whitesmoke;
-	margin: 0 0 .25em;
-}
 
 .results-divider {
 	margin: 0 .5em;

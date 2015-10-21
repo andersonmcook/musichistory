@@ -72,6 +72,8 @@ var songOptions = document.getElementById("song-options-div");
 var results = document.getElementById("results");
 var addMusic = document.getElementById("add-music");
 
+var errorMessage = document.getElementById("error-message");
+
 var viewMusicLink = document.getElementById("view-music-link");
 var addMusicLink = document.getElementById("add-music-link");
 var profileLink = document.getElementById("profile-link");
@@ -129,8 +131,10 @@ var albumNameInput = document.getElementById("album-name-input");
 
 
 var formAdd = function () {
+	if (songNameInput.value.length !== 0 && artistNameInput.value.length !== 0 && albumNameInput.value.length !== 0) {
 	songs.unshift(songNameInput.value + " - by " + artistNameInput.value + " on the album " + albumNameInput.value);
 	console.log("songs", songs);
+}
 };
 
 // watch for add button to be pressed
@@ -187,9 +191,9 @@ var writeToResults = function () {
 };
 
 writeToResults();
-formAddButton.addEventListener("click", formAdd);
 
 var addToResults = function () {
+	if (songNameInput.value.length !== 0 && artistNameInput.value.length !== 0 && albumNameInput.value.length !== 0) {
 	var addedSong = "";
 	addedSong += "<div class='song-result'><p class='song-name'>" + songNameInput.value + "</p>";
 	addedSong += "<span class='results-line results-artist'>" + artistNameInput.value + "</span>";
@@ -197,12 +201,20 @@ var addToResults = function () {
 	addedSong += "<span class='results-line results-album'>" + albumNameInput.value + "</span></div>";
 	//results.innerHTML = output;
 	results.insertAdjacentHTML("afterbegin", addedSong);
-	songOptions.classList.add("display-none");
+	addMusic.classList.add("display-none");
+	songOptions.classList.remove("display-none");
 	results.classList.remove("display-none");
-
+	errorMessage.classList.add("display-none");
+	} else {
+		errorMessage.innerText = "Add a song, artist, and album";
+		errorMessage.classList.remove("display-none");
+	}
 };
 
-formAddButton.addEventListener("click", addToResults);
+	formAddButton.addEventListener("click", formAdd);
+	formAddButton.addEventListener("click", addToResults);
+
+
 //writeToResults();
 
 
