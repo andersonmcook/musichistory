@@ -168,7 +168,7 @@ var albumNameInput = $("#album-name-input");
 
 var formAdd = function () {
 	if (songNameInput.val().length !== 0 && artistNameInput.val().length !== 0 && albumNameInput.val().length !== 0) {
-	songs.unshift(songNameInput.value + " - by " + artistNameInput.value + " on the album " + albumNameInput.value);
+	songs.unshift(songNameInput.val() + " - by " + artistNameInput.val() + " on the album " + albumNameInput.val());
 	console.log("songs", songs);
 }
 };
@@ -229,6 +229,7 @@ var writeToResults = function () {
 
 writeToResults();
 
+
 var addToResults = function () {
 	// if (songNameInput.value.length !== 0 && artistNameInput.value.length !== 0 && albumNameInput.value.length !== 0) {
 	if (songNameInput.val().length !== 0 && artistNameInput.val().length !== 0 && albumNameInput.val().length !== 0) {
@@ -249,6 +250,8 @@ var addToResults = function () {
 	// songOptions.classList.remove("display-none");
 	// results.classList.remove("display-none");
 	// errorMessage.classList.add("display-none");
+	errorMessage.hide();
+	
 	songNameInput.val("");
 	artistNameInput.val("");
 	albumNameInput.val("");
@@ -259,14 +262,26 @@ var addToResults = function () {
 	} else {
 		errorMessage.html("Add a song, artist, and album");
 		// errorMessage.classList.remove("display-none");
-		errorMessage.toggle();
+		errorMessage.show();
 	}
 };
 
+var addInputFields = $("#add-music").children();
+
 	// formAddButton.addEventListener("click", formAdd);
 	formAddButton.click(formAdd);
+	addInputFields.keydown(function (event) {
+		if (event.which === 13) {
+			formAdd();
+		}
+	});
 	// formAddButton.addEventListener("click", addToResults);
 	formAddButton.click(addToResults);
+	addInputFields.keydown(function (event) {
+		if (event.which === 13) {
+			addToResults();
+		}
+	});
 
 
 //writeToResults();
