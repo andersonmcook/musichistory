@@ -1,3 +1,4 @@
+$(document).ready(function() {
 /* Create a branch in your musichistory repository named version2.
 Switch to that branch.
 Requirements
@@ -220,6 +221,13 @@ var addToResults = function () {
 
 //writeToResults();
 
+
+
+
+
+
+
+});
 
 
 
