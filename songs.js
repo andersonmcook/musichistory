@@ -159,8 +159,15 @@ var artistNameInput = $("#artist-name-input");
 var albumNameInput = $("#album-name-input");
 
 
+// var formAdd = function () {
+// 	if (songNameInput.value.length !== 0 && artistNameInput.value.length !== 0 && albumNameInput.value.length !== 0) {
+// 	songs.unshift(songNameInput.value + " - by " + artistNameInput.value + " on the album " + albumNameInput.value);
+// 	console.log("songs", songs);
+// }
+// };
+
 var formAdd = function () {
-	if (songNameInput.value.length !== 0 && artistNameInput.value.length !== 0 && albumNameInput.value.length !== 0) {
+	if (songNameInput.val().length !== 0 && artistNameInput.val().length !== 0 && albumNameInput.val().length !== 0) {
 	songs.unshift(songNameInput.value + " - by " + artistNameInput.value + " on the album " + albumNameInput.value);
 	console.log("songs", songs);
 }
@@ -216,30 +223,43 @@ var writeToResults = function () {
 		output += "<span class='results-line results-divider'>" + "|" + "</span>";
 		output += "<span class='results-line results-album'>" + albumTitles[i] + "</span></div>";
 	}
-	results.innerHTML = output;
+	// results.innerHTML = output;
+	results.html(output);
 };
 
 writeToResults();
 
 var addToResults = function () {
-	if (songNameInput.value.length !== 0 && artistNameInput.value.length !== 0 && albumNameInput.value.length !== 0) {
+	// if (songNameInput.value.length !== 0 && artistNameInput.value.length !== 0 && albumNameInput.value.length !== 0) {
+	if (songNameInput.val().length !== 0 && artistNameInput.val().length !== 0 && albumNameInput.val().length !== 0) {
+
 	var addedSong = "";
-	addedSong += "<div class='song-result'><p class='song-name'>" + songNameInput.value + "</p>";
-	addedSong += "<span class='results-line results-artist'>" + artistNameInput.value + "</span>";
+	addedSong += "<div class='song-result'><p class='song-name'>" + songNameInput.val() + "</p>";
+	addedSong += "<span class='results-line results-artist'>" + artistNameInput.val() + "</span>";
 	addedSong += "<span class='results-line results-divider'>" + "|" + "</span>";
-	addedSong += "<span class='results-line results-album'>" + albumNameInput.value + "</span></div>";
+	addedSong += "<span class='results-line results-album'>" + albumNameInput.val() + "</span></div>";
 	//results.innerHTML = output;
-	results.insertAdjacentHTML("afterbegin", addedSong);
-	songNameInput.value = "";
-	artistNameInput.value = "";
-	albumNameInput.value = "";
-	addMusic.classList.add("display-none");
-	songOptions.classList.remove("display-none");
-	results.classList.remove("display-none");
-	errorMessage.classList.add("display-none");
+	// results.insertAdjacentHTML("afterbegin", addedSong);
+	// results += results.html(addedSong);
+	results.prepend(addedSong);
+	// songNameInput.value = "";
+	// artistNameInput.value = "";
+	// albumNameInput.value = "";
+	// addMusic.classList.add("display-none");
+	// songOptions.classList.remove("display-none");
+	// results.classList.remove("display-none");
+	// errorMessage.classList.add("display-none");
+	songNameInput.val("");
+	artistNameInput.val("");
+	albumNameInput.val("");
+
+	addMusic.hide();
+	songOptions.show();
+	results.show();
 	} else {
-		errorMessage.innerText = "Add a song, artist, and album";
-		errorMessage.classList.remove("display-none");
+		errorMessage.html("Add a song, artist, and album");
+		// errorMessage.classList.remove("display-none");
+		errorMessage.toggle();
 	}
 };
 
