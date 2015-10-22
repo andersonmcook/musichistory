@@ -69,30 +69,54 @@ Once the user fills out the song form and clicks the add button, you should coll
 
 
 
-var songOptions = document.getElementById("song-options-div");
-var results = document.getElementById("results");
-var addMusic = document.getElementById("add-music");
+var songOptions = $("#song-options-div");
+var results = $("#results");
+var addMusic = $("#add-music");
 
-var errorMessage = document.getElementById("error-message");
+addMusic.hide();
 
-var viewMusicLink = document.getElementById("view-music-link");
-var addMusicLink = document.getElementById("add-music-link");
-var profileLink = document.getElementById("profile-link");
+var errorMessage = $("#error-message");
 
-var formAddButton = document.getElementById("form-add-button");
+var viewMusicLink = $("#view-music-link");
+var addMusicLink = $("#add-music-link");
+var profileLink = $("#profile-link");
+
+var formAddButton = $("#form-add-button");
 
 // when view music is clicked, hides song options
-viewMusicLink.addEventListener("click", function () {
-	songOptions.classList.remove("display-none");
-	results.classList.remove("display-none");
-	addMusic.classList.add("display-none");
+// viewMusicLink.addEventListener("click", function () {
+// 	songOptions.classList.remove("display-none");
+// 	results.classList.remove("display-none");
+// 	addMusic.classList.add("display-none");
+// });
+
+viewMusicLink.click(function () {
+	// songOptions.classList.remove("display-none");
+	// results.classList.remove("display-none");
+	// addMusic.classList.add("display-none");
+	addMusic.hide();
+	results.show();
+	songOptions.show();
+
+
 });
+
 // when add music is clicked, hides song results
-addMusicLink.addEventListener("click", function () {
-	addMusic.classList.remove("display-none");
-	results.classList.add("display-none");
-	songOptions.classList.add("display-none");
+// addMusicLink.addEventListener("click", function () {
+// 	addMusic.classList.remove("display-none");
+// 	results.classList.add("display-none");
+// 	songOptions.classList.add("display-none");
+// });
+
+addMusicLink.click(function () {
+	// addMusic.classList.remove("display-none");
+	// results.classList.add("display-none");
+	// songOptions.classList.add("display-none");
+	results.hide();
+	songOptions.hide();
+	addMusic.show();
 });
+
 
 var songs = [];
 
@@ -126,9 +150,13 @@ console.log("songs with characters replaced", songs);
 
 // add in new songs, artists, albums
 
-var songNameInput = document.getElementById("song-name-input");
-var artistNameInput = document.getElementById("artist-name-input");
-var albumNameInput = document.getElementById("album-name-input");
+// var songNameInput = document.getElementById("song-name-input");
+// var artistNameInput = document.getElementById("artist-name-input");
+// var albumNameInput = document.getElementById("album-name-input");
+
+var songNameInput = $("#song-name-input");
+var artistNameInput = $("#artist-name-input");
+var albumNameInput = $("#album-name-input");
 
 
 var formAdd = function () {
@@ -215,8 +243,10 @@ var addToResults = function () {
 	}
 };
 
-	formAddButton.addEventListener("click", formAdd);
-	formAddButton.addEventListener("click", addToResults);
+	// formAddButton.addEventListener("click", formAdd);
+	formAddButton.click(formAdd);
+	// formAddButton.addEventListener("click", addToResults);
+	formAddButton.click(addToResults);
 
 
 //writeToResults();
