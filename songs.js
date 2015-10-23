@@ -76,14 +76,17 @@ $.ajax({
   url: "data/songs.json"
 }).done(writeToResults);
 
-// moreButton.click()
-// moreButton.hide();
+// var moreButton = "<button class='more'>More</button>";
+// songOptions.append(moreButton);
+// console.log("moreButton", moreButton);
 
-var moreButton = "<button class='more'>More</button>";
+// var moreButton = "<button class='more'>More</button>";
 
 $.ajax({
 	url: "data/songs2.json"
 }).done(writeToResults);
+
+$(".more").remove();
 
 	// results.append(moreButton);
 
