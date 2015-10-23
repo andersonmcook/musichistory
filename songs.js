@@ -68,12 +68,30 @@ var writeToResults = function (songList) {
 		$(this).parent(".song-result").remove();
 	};	
 	deleteSongButton.click(deleteSong);
+	// var moreButton = "<button class='more'>More</button>";
+	// results.append(moreButton);
 };
 
 $.ajax({
   url: "data/songs.json"
 }).done(writeToResults);
 
+// moreButton.click()
+// moreButton.hide();
+
+var moreButton = "<button class='more'>More</button>";
+
+$.ajax({
+	url: "data/songs2.json"
+}).done(writeToResults);
+
+	// results.append(moreButton);
+
+// console.log("moreButton", moreButton);
+// console.log("$('.more')", $(".more"))
+
+// $(".more").remove();
+// var moreButton = "<button class='more'>More</button>";
 
 var addToResults = function () {
 
@@ -124,39 +142,6 @@ addInputFields.keydown(function (event) {
 		addToResults();
 	}
 });
-
-// var deleteSongButton = $(".delete");
-
-// var deleteSong = function () {
-// 	$(this).parent(".song-result").remove();
-// 	console.log("deleteSong");
-// };
-
-// deleteSongButton.click(deleteSong);
-
-// var deleteSongButton = $(".delete");
-
-// var deleteSong = function () {
-// 	deleteSongButton.parents(".song-result").remove();
-// 	console.log("deleteSong");
-// };
-
-// deleteSongButton.click(deleteSong);
-
-// var test = function () {
-// 	console.log("hello");
-// };
-
-// deleteSongButton.click(test);
-
-// test();
-// console.log("deleteSongButton", deleteSongButton);
-
-
-
-
-
-
 
 }); //end of jQuery
 

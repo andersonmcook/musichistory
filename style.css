@@ -179,6 +179,13 @@ nav ul li a {
 	vertical-align: top;
 }
 
+.more {
+	background: whitesmoke;
+	color: tomato;
+	border: 1px solid tomato;
+	font-size: .75em;
+}
+
 /*label {
 	margin-top: .5em;
 }*/
