@@ -66,7 +66,6 @@ var writeToResults = function (songList) {
 	var deleteSongButton = $(".delete");
 	var deleteSong = function () {
 		$(this).parent(".song-result").remove();
-		console.log("deleteSong");
 	};	
 	deleteSongButton.click(deleteSong);
 };
@@ -96,6 +95,14 @@ var addToResults = function () {
 	addMusic.hide();
 	songOptions.show();
 	results.show();
+
+//duplicate from writeToResults
+	var deleteSongButton = $(".delete");
+	var deleteSong = function () {
+		$(this).parent(".song-result").remove();
+	};	
+	deleteSongButton.click(deleteSong);
+
 	} else {
 		errorMessage.html("Add a song, artist, and album");
 		errorMessage.show();
