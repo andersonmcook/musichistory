@@ -74,6 +74,8 @@ var results = $("#results");
 var addMusic = $("#add-music");
 
 addMusic.hide();
+results.hide();
+results.fadeIn();
 
 var errorMessage = $("#error-message");
 
@@ -95,8 +97,8 @@ viewMusicLink.click(function () {
 	// results.classList.remove("display-none");
 	// addMusic.classList.add("display-none");
 	addMusic.hide();
-	results.show();
-	songOptions.show();
+	results.fadeIn();
+	songOptions.fadeIn();
 
 
 });
@@ -114,7 +116,7 @@ addMusicLink.click(function () {
 	// songOptions.classList.add("display-none");
 	results.hide();
 	songOptions.hide();
-	addMusic.show();
+	addMusic.fadeIn();
 });
 
 
@@ -251,7 +253,7 @@ var addToResults = function () {
 	// results.classList.remove("display-none");
 	// errorMessage.classList.add("display-none");
 	errorMessage.hide();
-	
+
 	songNameInput.val("");
 	artistNameInput.val("");
 	albumNameInput.val("");
