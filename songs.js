@@ -29,6 +29,9 @@ var profileLink = $("#profile-link");
 
 var formAddButton = $("#form-add-button");
 
+var songNameInput = $("#song-name-input");
+var artistNameInput = $("#artist-name-input");
+var albumNameInput = $("#album-name-input");
 
 viewMusicLink.click(function () {
 	addMusic.hide();
@@ -36,51 +39,17 @@ viewMusicLink.click(function () {
 	songOptions.fadeIn();
 });
 
-
-
 addMusicLink.click(function () {
 	results.hide();
 	songOptions.hide();
 	addMusic.fadeIn();
+	songNameInput.focus();
 });
-
-
-// var songs = [];
-
-// songs[songs.length] = "Legs > by Z*ZTop on the album Eliminator";
-// songs[songs.length] = "The Logical Song > by Supertr@amp on the album Breakfast in America";
-// songs[songs.length] = "Another Brick in the Wall > by Pink Floyd on the album The Wall";
-// songs[songs.length] = "Welco(me to the Jungle > by Guns & Roses on the album Appetite for Destruction";
-// songs[songs.length] = "Ironi!c > by Alanis Moris*ette on the album Jagged Little Pill";
-// console.log("initial songs", songs)
-// songs.push("Conduit - by Converge on the album When Forever Comes Crashing");
-// songs.unshift("Blooming Amygdala - by Dendritic Arbor on the album Romantic Love");
-
-// console.log("with added songs", songs);
-
-var output = "";
-var songTitle = "";
-var albumTitle = "";
-var band = "";
-// for (var i = 0; i < songs.length; i++) {
-// 	songs[i] = songs[i].replace(/>/g, "-");
-// 	songs[i] = songs[i].replace(/\*/g, "");
-// 	songs[i] = songs[i].replace(/@/g, "");
-// 	songs[i] = songs[i].replace(/!/g, "");
-// 	songs[i] = songs[i].replace(/\(/g, "");
-// }
-// console.log("songs with characters replaced", songs);
-
-// add in new songs, artists, albums
-
-var songNameInput = $("#song-name-input");
-var artistNameInput = $("#artist-name-input");
-var albumNameInput = $("#album-name-input");
 
 var formAdd = function () {
 	if (songNameInput.val().length !== 0 && artistNameInput.val().length !== 0 && albumNameInput.val().length !== 0) {
-	songs.unshift(songNameInput.val() + " - by " + artistNameInput.val() + " on the album " + albumNameInput.val());
-	console.log("songs", songs);
+	// songs.unshift(songNameInput.val() + " - by " + artistNameInput.val() + " on the album " + albumNameInput.val());
+	// console.log("songs");
 }
 };
 
@@ -90,9 +59,16 @@ var writeToResults = function (songList) {
 		var results1 = "<div class='song-result'><p class='song-name'>" + currentSong.title + "</p>";
 		var results2 = "<span class='results-line results-artist'>" + currentSong.artist + "</span>";
 		var results3 = "<span class='results-line results-divider'>" + "|" + "</span>";
-		var results4 = "<span class='results-line results-album'>" + currentSong.album + "</span></div>";
-		results.append(results1 + results2 + results3 + results4);	
+		var results4 = "<span class='results-line results-album'>" + currentSong.album + "</span>";
+		var deleteButton = "<button class='delete'>Delete</button></div>";
+		results.append(results1 + results2 + results3 + results4 + deleteButton);	
 	}
+	var deleteSongButton = $(".delete");
+	var deleteSong = function () {
+		$(this).parent(".song-result").remove();
+		console.log("deleteSong");
+	};	
+	deleteSongButton.click(deleteSong);
 };
 
 $.ajax({
@@ -108,7 +84,8 @@ var addToResults = function () {
 	addedSong += "<div class='song-result'><p class='song-name'>" + songNameInput.val() + "</p>";
 	addedSong += "<span class='results-line results-artist'>" + artistNameInput.val() + "</span>";
 	addedSong += "<span class='results-line results-divider'>" + "|" + "</span>";
-	addedSong += "<span class='results-line results-album'>" + albumNameInput.val() + "</span></div>";
+	addedSong += "<span class='results-line results-album'>" + albumNameInput.val() + "</span>";
+	addedSong += "<button class='delete'>Delete</button></div>";
 	results.prepend(addedSong);
 	errorMessage.hide();
 
@@ -127,20 +104,46 @@ var addToResults = function () {
 
 var addInputFields = $("#add-music").children();
 
-	formAddButton.click(formAdd);
-	addInputFields.keydown(function (event) {
-		if (event.which === 13) {
-			formAdd();
-		}
-	});
-	formAddButton.click(addToResults);
-	addInputFields.keydown(function (event) {
-		if (event.which === 13) {
-			addToResults();
-		}
-	});
+formAddButton.click(formAdd);
+addInputFields.keydown(function (event) {
+	if (event.which === 13) {
+		formAdd();
+	}
+});
 
+formAddButton.click(addToResults);
+addInputFields.keydown(function (event) {
+	if (event.which === 13) {
+		addToResults();
+	}
+});
 
+// var deleteSongButton = $(".delete");
+
+// var deleteSong = function () {
+// 	$(this).parent(".song-result").remove();
+// 	console.log("deleteSong");
+// };
+
+// deleteSongButton.click(deleteSong);
+
+// var deleteSongButton = $(".delete");
+
+// var deleteSong = function () {
+// 	deleteSongButton.parents(".song-result").remove();
+// 	console.log("deleteSong");
+// };
+
+// deleteSongButton.click(deleteSong);
+
+// var test = function () {
+// 	console.log("hello");
+// };
+
+// deleteSongButton.click(test);
+
+// test();
+// console.log("deleteSongButton", deleteSongButton);
 
 
 

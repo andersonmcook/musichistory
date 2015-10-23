@@ -165,9 +165,18 @@ nav ul li a {
 	background: tomato;
 }
 
-
 .results-divider {
 	margin: 0 .5em;
+}
+
+.delete {
+	margin-left: 1em;
+	font-size: .5em;
+	background: whitesmoke;
+	color: red;
+	border: 1px solid red;
+	text-align: center;
+	vertical-align: top;
 }
 
 /*label {
@@ -241,6 +250,7 @@ button {
 		clear: both;
 		width: 100%;
 		box-sizing: border-box;
+		font-size: 3em;
 	}
 
 	nav ul {
@@ -254,5 +264,9 @@ button {
 		font-size: 3em;
 		width: auto;
 		margin: 0 1em;
+	}
+
+	.delete {
+		font-size: .75em;
 	}
 }
