@@ -1,0 +1,29 @@
+{
+  "songs": [
+    {
+      "title": "Dead Men Tell No Tales",
+      "artist": "Monarch",
+      "album": "Dead Men Tell No Tales"
+    },
+    {
+      "title": "Exordium",
+      "artist": "Alraune",
+      "album": "The Process of Self-Immolation"      
+    },
+    {
+      "title": "Mountain",
+      "artist": "Baring Teeth",
+      "album": "Ghost Chorus Among The Ruins"      
+    },
+    {
+      "title": "Monaco",
+      "artist": "Playing Enemy",
+      "album": "I Was Your City" 
+    },
+    {
+      "title": "Gun",
+      "artist": "Death Engine",
+      "album": "Amen"
+    }
+  ]
+}
