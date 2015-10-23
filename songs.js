@@ -84,59 +84,17 @@ var formAdd = function () {
 }
 };
 
-
-// var songTitles = [];
-
-// for (var i = 0; i < songs.length; i++) {
-// 		songTitle = songs[i].slice(0, songs[i].indexOf("-") - 1);
-// 		console.log("songTitle", songTitle);
-// 		songTitles.push(songTitle);
-// }
-
-// console.log(songTitles);
-
-// var albumTitles = [];
-
-// for (var i = 0; i < songs.length; i++) {
-// 		albumTitle = songs[i].slice(songs[i].indexOf("album") + 6);
-// 		console.log("albumTitle", albumTitle);
-// 		albumTitles.push(albumTitle);
-// }
-
-// console.log("albumTitles", albumTitles);
-
-// var bands = [];
-
-// for (var i = 0; i < songs.length; i++) {
-// 		band = songs[i].slice(songs[i].indexOf("by") + 3, songs[i].indexOf("album") - 8);
-// 		console.log("band", band);
-// 		bands.push(band);
-// }
-
-// console.log("bands", bands);
-
-// var writeToResults = function () {
-// 	for (var i = 0; i < songs.length; i++) {
-// 		output += "<div class='song-result'><p class='song-name'>" + songTitles[i] + "</p>";
-// 		output += "<span class='results-line results-artist'>" + bands[i] + "</span>";
-// 		output += "<span class='results-line results-divider'>" + "|" + "</span>";
-// 		output += "<span class='results-line results-album'>" + albumTitles[i] + "</span></div>";
-// 	}
-// 	results.html(output);
-// };
-
 var writeToResults = function (songList) {
 	for (var i = 0; i < songList.songs.length; i++) {
 		var currentSong = songList.songs[i];
-		results.append("<div class='song-result'><p class='song-name'>" + currentSong.title + "</p>");
-		results.append("<span class='results-line results-artist'>" + currentSong.artist + "</span>");
-		results.append("<span class='results-line results-divider'>" + "|" + "</span>");
-		results.append("<span class='results-line results-album'>" + currentSong.album + "</span></div>");
+		var results1 = "<div class='song-result'><p class='song-name'>" + currentSong.title + "</p>";
+		var results2 = "<span class='results-line results-artist'>" + currentSong.artist + "</span>";
+		var results3 = "<span class='results-line results-divider'>" + "|" + "</span>";
+		var results4 = "<span class='results-line results-album'>" + currentSong.album + "</span></div>";
+		results.append(results1 + results2 + results3 + results4);	
 	}
-	// results.html(output);
 };
 
-// writeToResults();
 $.ajax({
   url: "data/songs.json"
 }).done(writeToResults);
