@@ -68,33 +68,35 @@ var writeToResults = function (songList) {
 		$(this).parent(".song-result").remove();
 	};	
 	deleteSongButton.click(deleteSong);
-	// var moreButton = "<button class='more'>More</button>";
-	// results.append(moreButton);
+	var moreButton = "<button class='more'>More</button>";
+	results.append(moreButton);
 };
+
+// var moreButton = "<button class='more'>More</button>";
 
 $.ajax({
   url: "data/songs.json"
 }).done(writeToResults);
 
-// var moreButton = "<button class='more'>More</button>";
-// songOptions.append(moreButton);
-// console.log("moreButton", moreButton);
-
-// var moreButton = "<button class='more'>More</button>";
-
 $.ajax({
-	url: "data/songs2.json"
-}).done(writeToResults);
-
-$(".more").remove();
-
+	url: "data/songs.json"
+}).done(function () {
 	// results.append(moreButton);
+	$(".more").click(function () {
+		$(".more").remove();
+		$.ajax({
+			url: "data/songs2.json"
+		}).done(writeToResults);
+	});
+});
 
-// console.log("moreButton", moreButton);
-// console.log("$('.more')", $(".more"))
 
-// $(".more").remove();
-// var moreButton = "<button class='more'>More</button>";
+// $.ajax({
+// 	url: "data/songs2.json"
+// }).done(writeToResults);
+
+
+
 
 var addToResults = function () {
 
