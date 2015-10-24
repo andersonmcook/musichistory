@@ -81,7 +81,7 @@ $.ajax({
 $.ajax({
 	url: "data/songs.json"
 }).done(function () {
-	// results.append(moreButton);
+	// writeToResults();
 	$(".more").click(function () {
 		$(".more").remove();
 		$.ajax({
