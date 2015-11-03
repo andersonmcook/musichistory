@@ -28,7 +28,7 @@ body {
 
 nav {
 	background: dimgray;
-	font-size: 1.25em;
+	font-size: 1em;
 	padding: 0;
 	/*flex: 1 100%;*/
 	top: 0;
@@ -91,7 +91,8 @@ nav a:hover {
 
 #add-music {
 	padding: 1em;
-	background: #F0F0F0;
+	/*background: #F0F0F0;*/
+	background: whitesmoke;
 	/*width: 300px;*/
 	margin: 0 auto;
 }
@@ -99,6 +100,13 @@ nav a:hover {
 #add-music label, #add-music button, #add-music div {
 	margin: 1em auto;
 	text-align: center;
+}
+
+#form-add-button {
+	background: whitesmoke;
+	border: thin solid tomato;
+	outline-color: tomato;
+	color: tomato;
 }
 
 #error-message {
@@ -232,7 +240,15 @@ select {
 
 input[type=text] {
 	font-size: 1em;
-	margin-left: .5em;
+	/*margin-left: .5em;*/
+	/*outline: thin solid tomato;*/
+	border: thin solid tomato;
+	outline-color: tomato;
+	/*outline-width: thick;*/
+}
+
+input[type=text]:focus {
+	color: tomato;
 }
 
 input[type=range] {
@@ -249,6 +265,14 @@ button {
 
 .test {
 	background: blue;
+}
+
+.spaced {
+	/*letter-spacing: 1em;*/
+	font-size: 1.5em;
+	text-align: center;
+	font-weight: lighter;
+	/*color: tomato;*/
 }
 
 /*@media screen and (max-width: 750px), screen and (max-device-width: 700px) {
