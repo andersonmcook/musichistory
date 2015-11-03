@@ -1,0 +1,323 @@
+// $font-stack:    Helvetica, sans-serif;
+// $primary-color: #333;
+
+// body {
+//   font: 100% $font-stack;
+//   color: $primary-color;
+// }
+
+/*Using your new CSS skills, you'll build even better looking music history pages.
+
+1. Use the Flexible Layout Box model to ensure that both the form section and the content section are the same height.
+2. The entire container for the even songs (plus its details) should have a background color of Sea Shell 
+(SeaShell or #FFF5EE)
+3. The entire container for the odd songs (plus its details) should have a background color of Mint Cream 
+(MintCream or #F5FFFA)
+4. The first song container should have bold text.
+5. Set the navigation bar's position so that it's always on the top of the page, even if you scroll down. 
+To ensure this works, you can just add some div tags at the bottom of the page that add enough text that
+would force you to scroll the browser.
+*/
+body {
+	font-family: sans-serif;
+	padding: 0;
+	margin: 0;
+}
+
+/*#flex-container {
+	margin-top: 3%;
+}*/
+
+/*#navigation {
+	position: fixed;
+	top: 0;
+	left: 0;
+}*/
+
+nav {
+	background: dimgray;
+	font-size: 1em;
+	padding: 0;
+	/*flex: 1 100%;*/
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+
+nav ul {
+	/*margin: 0;*/
+	padding: 0 1em 0 1em;
+}
+
+nav ul li {
+	list-style-type: none;
+	display: inline;
+	color: white;
+	/*margin-right: .25em;*/
+}
+
+nav ul li:not(:last-child) {
+	margin-right: .25em;
+}
+
+/*nav ul li:nth-of-type(2n + 0) {
+	font-size: 1.5em;
+}*/
+
+nav ul li a {
+	text-decoration: none;
+	color: white;
+}
+
+nav a:hover {
+	color: tomato;
+	text-decoration: none;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+.display-none {
+	display: none;
+}
+
+/*#songs-and-options {
+	flex: 1 100%;
+	width: 400px;
+} */
+
+#song-options-div {
+	/*flex-grow: 1;*/
+	/*width: 300px;*/
+	/*margin: auto;*/
+	/*float: left;*/
+	padding: 1em;
+	background: whitesmoke;
+}
+
+#add-music {
+	padding: 1em;
+	/*background: #F0F0F0;*/
+	background: whitesmoke;
+	/*width: 300px;*/
+	margin: 0 auto;
+}
+
+#add-music label, #add-music button, #add-music div {
+	margin: 1em auto;
+	text-align: center;
+}
+
+#form-add-button {
+	background: whitesmoke;
+	border: thin solid tomato;
+	outline-color: tomato;
+	color: tomato;
+}
+
+#error-message {
+	color: red;
+	padding: 1em;
+	background: pink;
+	text-align: center;
+}
+
+/*.form-style {
+	background: #4DD7FA;
+	 width: 15%; 
+	width: 14em;
+	float: left;
+	padding: 1em;
+	height: 16em;
+	
+	padding: 1em;
+}*/
+
+/*.form-style * {
+	padding: 1em 0;
+}*/
+
+/* .overflow {
+	overflow: hidden;
+} */
+
+#genre-title {
+	margin: .5em;
+}
+
+/*.submit {
+	font-size: 2em;
+	margin: 2.5em 0 0; 
+	color: black;
+}*/
+
+#results {
+	background: whitesmoke;
+	/*flex-grow: 2;*/
+	/*width: 600px;*/
+	padding: 1em;
+	/*float: left;*/
+	/*margin-left: 1em;*/
+	/*float: left;
+	padding: 1%;
+	width: 60%;*/
+}
+
+.song-result {
+	padding: .25em .5em;
+}
+
+.song-name {
+	font-size: 2em;
+	color: whitesmoke;
+	margin: 0 0 .25em;
+}
+
+.song-result:not(:last-child) {
+	margin-bottom: .5em;
+}
+
+#results .song-result:nth-of-type(2n+1) {
+	background: gray;
+}
+
+#results .song-result:nth-of-type(2n+0) {
+	background: darkgray;
+}
+
+#results .song-result:first-child {
+	font-weight: bold;
+	background: tomato;
+}
+
+.results-divider {
+	margin: 0 .5em;
+}
+
+.delete {
+	margin-left: 1em;
+	font-size: .5em;
+	background: whitesmoke;
+	color: red;
+	border: 1px solid red;
+	text-align: center;
+	vertical-align: top;
+}
+
+.more {
+	background: whitesmoke;
+	color: tomato;
+	border: 1px solid tomato;
+	font-size: .75em;
+}
+
+/*label {
+	margin-top: .5em;
+}*/
+
+.smaller-margin {
+	display: block;
+	margin-top: 0;
+}
+
+/*.bordered {
+	border: .125em solid black;
+	margin: .5em; 
+	box-sizing: border-box;
+	border-radius: .25em;
+}*/
+
+.displayblock {
+	display: block;
+	/*margin: .25em 0; */
+}
+
+.results-line {
+	margin-bottom: 2em;
+	color: white;
+	/*-webkit-flex-direction: row; */
+}
+
+select {
+	font-size: 1em;
+	border-color: #999;
+	width: 100%;
+}
+
+input[type=text] {
+	font-size: 1em;
+	/*margin-left: .5em;*/
+	/*outline: thin solid tomato;*/
+	border: thin solid tomato;
+	outline-color: tomato;
+	/*outline-width: thick;*/
+}
+
+input[type=text]:focus {
+	color: tomato;
+}
+
+input[type=range] {
+	width: 100%;
+}
+
+button {
+	font-size: 1em;
+}
+
+.center {
+	margin: auto;
+}
+
+.test {
+	background: blue;
+}
+
+.spaced {
+	/*letter-spacing: 1em;*/
+	font-size: 1.5em;
+	text-align: center;
+	font-weight: lighter;
+	/*color: tomato;*/
+}
+
+/*@media screen and (max-width: 750px), screen and (max-device-width: 700px) {
+	#song-options-div {
+		box-sizing: border-box;
+		margin: 0 1em;
+		float: none;
+		font-size: 3em;
+	}
+
+	#song-options-div input[type=checkbox] {
+		transform: scale(3, 3);
+		margin-right: 2em;
+	}
+
+	#results {
+		margin: 1em 0 0 0;
+		clear: both;
+		width: 100%;
+		box-sizing: border-box;
+		font-size: 3em;
+	}
+
+	nav ul {
+		text-align: center;
+		margin: .5em auto;
+		font-size: 3em;
+		padding: 0;
+	}
+
+	#add-music {
+		font-size: 3em;
+		/*width: auto;
+		margin: 0 1em;
+	}
+
+	.delete {
+		font-size: .75em;
+	}
+}*/
