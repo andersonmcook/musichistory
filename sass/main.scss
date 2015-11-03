@@ -1,78 +1,56 @@
-// $font-stack:    Helvetica, sans-serif;
-// $primary-color: #333;
+// sets nav background color
+$nav-color: dimgray;
 
-// body {
-//   font: 100% $font-stack;
-//   color: $primary-color;
-// }
+// sets accent color for text and divs
+$accent-color: tomato;
 
-/*Using your new CSS skills, you'll build even better looking music history pages.
+// sets default background color
+$bg-color: whitesmoke;
 
-1. Use the Flexible Layout Box model to ensure that both the form section and the content section are the same height.
-2. The entire container for the even songs (plus its details) should have a background color of Sea Shell 
-(SeaShell or #FFF5EE)
-3. The entire container for the odd songs (plus its details) should have a background color of Mint Cream 
-(MintCream or #F5FFFA)
-4. The first song container should have bold text.
-5. Set the navigation bar's position so that it's always on the top of the page, even if you scroll down. 
-To ensure this works, you can just add some div tags at the bottom of the page that add enough text that
-would force you to scroll the browser.
-*/
+$error-color: red;
+$error-bg-color: pink;
+
+$odd-bg-color: gray;
+$even-bg-color: darkgray;
+
 body {
 	font-family: sans-serif;
 	padding: 0;
 	margin: 0;
 }
 
-/*#flex-container {
-	margin-top: 3%;
-}*/
-
-/*#navigation {
-	position: fixed;
-	top: 0;
-	left: 0;
-}*/
-
 nav {
-	background: dimgray;
+	background: $nav-color;
 	font-size: 1em;
 	padding: 0;
-	/*flex: 1 100%;*/
 	top: 0;
 	left: 0;
 	width: 100%;
-}
+
+	ul {
+		padding: 0 1em 0 1em;
+
+		li {
+			list-style-type: none;
+			display: inline;
+			color: white;
+
+			a {
+				text-decoration: none;
+				color: white;
+			}
+		}
+
+		li:not(:last-child) {
+			margin-right: .25em;
+		}
+	}
 
 
-nav ul {
-	/*margin: 0;*/
-	padding: 0 1em 0 1em;
-}
-
-nav ul li {
-	list-style-type: none;
-	display: inline;
-	color: white;
-	/*margin-right: .25em;*/
-}
-
-nav ul li:not(:last-child) {
-	margin-right: .25em;
-}
-
-/*nav ul li:nth-of-type(2n + 0) {
-	font-size: 1.5em;
-}*/
-
-nav ul li a {
-	text-decoration: none;
-	color: white;
-}
-
-nav a:hover {
-	color: tomato;
-	text-decoration: none;
+	a:hover {
+		color: $accent-color;
+		text-decoration: none;
+	}
 }
 
 .hidden {
@@ -94,13 +72,13 @@ nav a:hover {
 	/*margin: auto;*/
 	/*float: left;*/
 	padding: 1em;
-	background: whitesmoke;
+	background: $bg-color;
 }
 
 #add-music {
 	padding: 1em;
 	/*background: #F0F0F0;*/
-	background: whitesmoke;
+	background: $bg-color;
 	/*width: 300px;*/
 	margin: 0 auto;
 }
@@ -111,37 +89,18 @@ nav a:hover {
 }
 
 #form-add-button {
-	background: whitesmoke;
-	border: thin solid tomato;
-	outline-color: tomato;
-	color: tomato;
+	background: $bg-color;
+	border: thin solid $accent-color;
+	outline-color: $accent-color;
+	color: $accent-color;
 }
 
 #error-message {
-	color: red;
+	color: $error-color;
 	padding: 1em;
-	background: pink;
+	background: $error-bg-color;
 	text-align: center;
 }
-
-/*.form-style {
-	background: #4DD7FA;
-	 width: 15%; 
-	width: 14em;
-	float: left;
-	padding: 1em;
-	height: 16em;
-	
-	padding: 1em;
-}*/
-
-/*.form-style * {
-	padding: 1em 0;
-}*/
-
-/* .overflow {
-	overflow: hidden;
-} */
 
 #genre-title {
 	margin: .5em;
@@ -154,15 +113,8 @@ nav a:hover {
 }*/
 
 #results {
-	background: whitesmoke;
-	/*flex-grow: 2;*/
-	/*width: 600px;*/
+	background: $bg-color;
 	padding: 1em;
-	/*float: left;*/
-	/*margin-left: 1em;*/
-	/*float: left;
-	padding: 1%;
-	width: 60%;*/
 }
 
 .song-result {
@@ -171,7 +123,7 @@ nav a:hover {
 
 .song-name {
 	font-size: 2em;
-	color: whitesmoke;
+	color: $bg-color;
 	margin: 0 0 .25em;
 }
 
@@ -180,16 +132,16 @@ nav a:hover {
 }
 
 #results .song-result:nth-of-type(2n+1) {
-	background: gray;
+	background: $odd-bg-color;
 }
 
 #results .song-result:nth-of-type(2n+0) {
-	background: darkgray;
+	background: $even-bg-color;
 }
 
 #results .song-result:first-child {
 	font-weight: bold;
-	background: tomato;
+	background: $accent-color;
 }
 
 .results-divider {
@@ -199,7 +151,7 @@ nav a:hover {
 .delete {
 	margin-left: 1em;
 	font-size: .5em;
-	background: whitesmoke;
+	background: $bg-color;
 	color: red;
 	border: 1px solid red;
 	text-align: center;
@@ -207,9 +159,9 @@ nav a:hover {
 }
 
 .more {
-	background: whitesmoke;
-	color: tomato;
-	border: 1px solid tomato;
+	background: $bg-color;
+	color: $accent-color;
+	border: 1px solid $accent-color;
 	font-size: .75em;
 }
 
@@ -250,13 +202,13 @@ input[type=text] {
 	font-size: 1em;
 	/*margin-left: .5em;*/
 	/*outline: thin solid tomato;*/
-	border: thin solid tomato;
-	outline-color: tomato;
+	border: thin solid $accent-color;
+	outline-color: $accent-color;
 	/*outline-width: thick;*/
 }
 
 input[type=text]:focus {
-	color: tomato;
+	color: $accent-color;
 }
 
 input[type=range] {
