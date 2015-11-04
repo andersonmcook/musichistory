@@ -50,7 +50,7 @@ var writeToResults = function (songList) {
 		var results2 = "<span class='results-line results-artist'>" + currentSong.artist + "</span>";
 		var results3 = "<span class='results-line results-divider'>" + "|" + "</span>";
 		var results4 = "<span class='results-line results-album'>" + currentSong.album + "</span>";
-		var deleteButton = "<button class='delete'>X</button></div>";
+		var deleteButton = "<button class='delete'>&times</button></div>";
 		results.append(results1 + results2 + results3 + results4 + deleteButton);	
 	}
 	var deleteSongButton = $(".delete");
@@ -68,7 +68,7 @@ var writeToResults = function (songList) {
 //   url: "data/songs.json"
 // }).done(writeToResults);
 
-var moreButtonJQuery = $(".more");
+// var moreButtonJQuery = $(".more");
 populateSongs.writeFirstSongs(writeToResults);
 
 // $.ajax({
