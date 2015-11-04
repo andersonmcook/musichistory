@@ -98,7 +98,7 @@ nav {
 }
 
 #form-add-button {
-	background: $bg-color;
+	background: white;
 	border: thin solid $accent-color;
 	outline-color: $accent-color;
 	color: $accent-color;
@@ -107,6 +107,7 @@ nav {
 #error-message {
 	color: $error-color;
 	padding: 1em;
+	margin-top: 1em;
 	background: $error-bg-color;
 	text-align: center;
 }
@@ -237,7 +238,7 @@ button {
 	background: blue;
 }
 
-.spaced {
+.add-music-label {
 	/*letter-spacing: 1em;*/
 	font-size: 1.5em;
 	text-align: center;

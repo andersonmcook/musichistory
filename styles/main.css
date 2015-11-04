@@ -57,7 +57,7 @@ nav {
   text-align: center; }
 
 #form-add-button {
-  background: whitesmoke;
+  background: white;
   border: thin solid tomato;
   outline-color: tomato;
   color: tomato; }
@@ -65,6 +65,7 @@ nav {
 #error-message {
   color: red;
   padding: 1em;
+  margin-top: 1em;
   background: pink;
   text-align: center; }
 
@@ -170,7 +171,7 @@ button {
 .test {
   background: blue; }
 
-.spaced {
+.add-music-label {
   /*letter-spacing: 1em;*/
   font-size: 1.5em;
   text-align: center;
