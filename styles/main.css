@@ -11,7 +11,8 @@ nav {
   left: 0;
   width: 100%; }
   nav ul {
-    padding: 0 1em 0 1em; }
+    padding: 0 1em 0 1em;
+    margin-bottom: 1em; }
     nav ul li {
       list-style-type: none;
       display: inline;
@@ -43,14 +44,15 @@ nav {
   padding: 1em;
   background: whitesmoke; }
 
-#add-music {
-  padding: 1em;
-  /*background: #F0F0F0;*/
-  background: whitesmoke;
-  /*width: 300px;*/
-  margin: 0 auto; }
+#add-music > div:nth-of-type(2n+1) {
+  background: white; }
 
-#add-music label, #add-music button, #add-music div {
+.add-music-input {
+  background: whitesmoke;
+  padding: 0;
+  margin: 0; }
+
+#add-music label, #add-music button {
   margin: 1em auto;
   text-align: center; }
 
@@ -115,7 +117,8 @@ nav {
   background: whitesmoke;
   color: tomato;
   border: 1px solid tomato;
-  font-size: .75em; }
+  font-size: .75em;
+  outline-color: tomato; }
 
 /*label {
 	margin-top: .5em;

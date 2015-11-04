@@ -37,9 +37,9 @@
 			</div>	 -->
 		<!-- <div id="flex-container"> -->
 				<div class="row" id="add-music">
-					<div class="col-md-3"></div>
+					<div class="col-md-4 has-bg-color"></div>
 							<!-- <div id="add-music" class="bordered display-none"> -->
-					<div class="col-md-6">
+					<div class="col-md-4 add-music-input">
 						<label class="displayblock"><span class="displayblock spaced">Song</span><input name="song-name-input" type="text" id="song-name-input"></label>
 						<label class="displayblock"><span class="displayblock spaced">Artist</span><input name="artist-name-input" type="text" id="artist-name-input"></label>
 						<label class="displayblock"><span class="displayblock spaced">Album</span><input name="album-name-input" type="text" id="album-name-input"></label>
@@ -47,12 +47,12 @@
 						<div id="error-message" class="display-none"></div>
 					</div>
 							<!-- </div> -->
-					<div class="col-md-3"></div>
+					<div class="col-md-4 has-bg-color"></div>
 				</div>	
 <!-- 			</div> -->
 				<div class="row">
-					<div class="col-sm-2"></div>
-					<div id="song-options-div" class="bordered form-style col-sm-2">
+					<div class="col-sm-1"></div>
+					<div id="song-options-div" class="bordered form-style col-sm-3">
 						<label class="displayblock">Song length:<input type="range" name="song-length" class="displayblock center"></label>
 						<label class="displayblock">Artist:<select name="artist" class="displayblock center">
 							<!--<option value="options">Options</option>-->
@@ -83,16 +83,17 @@
 							<!-- </div>	 -->
 						<button class="displayblock center">Filter</button>
 					</div>
-					<!-- <div class="col-sm-1"></div> -->
+					<div class="col-sm-1"></div>
 					<div id="results" class="bordered col-sm-6">
 					<!-- results will populate here-->
 					</div>
-					<div class="col-sm-2"></div>
+					<div class="col-sm-1"></div>
 		</div>
-		<script src="./lib/bower_components/jquery/dist/jquery.min.js"></script>
-		<script src="./lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script data-main="javascripts/entry" src="lib/bower_components/requirejs/require.js"></script>
+		<!--<script src="./lib/bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="./lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script> -->
 		<!-- <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> -->
-		<script src="./javascripts/songs.js"></script>
+		<!-- <script src="./javascripts/songs.js"></script> -->
 	</body>
 </html>
 						<!--<p id="first-song-name" class="song-name"></p> -->

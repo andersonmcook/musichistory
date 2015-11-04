@@ -29,6 +29,7 @@ nav {
 
 	ul {
 		padding: 0 1em 0 1em;
+		margin-bottom: 1em;
 
 		li {
 			list-style-type: none;
@@ -76,14 +77,22 @@ nav {
 }
 
 #add-music {
-	padding: 1em;
-	/*background: #F0F0F0;*/
-	background: $bg-color;
-	/*width: 300px;*/
-	margin: 0 auto;
+	// padding: 1em;
+	// background: $bg-color;
+	// margin: 0 auto;
 }
 
-#add-music label, #add-music button, #add-music div {
+#add-music > div:nth-of-type(2n+1) {
+	background: white;
+}
+
+.add-music-input {
+	background: $bg-color;
+	padding: 0;
+	margin: 0;
+}
+
+#add-music label, #add-music button {
 	margin: 1em auto;
 	text-align: center;
 }
@@ -163,6 +172,7 @@ nav {
 	color: $accent-color;
 	border: 1px solid $accent-color;
 	font-size: .75em;
+	outline-color: $accent-color;
 }
 
 /*label {
