@@ -68,6 +68,7 @@ var writeToResults = function (songList) {
 //   url: "data/songs.json"
 // }).done(writeToResults);
 
+var moreButtonJQuery = $(".more");
 populateSongs.writeFirstSongs(writeToResults);
 
 // $.ajax({
