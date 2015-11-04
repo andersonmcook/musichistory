@@ -10,6 +10,7 @@ define(["jquery"], function($) {
 				  url: "data/songs2.json"
 				}).done(function(jsonDataSentByjQuery) {
 	        callbackFunctionReference(jsonDataSentByjQuery);
+	        $(".more").remove();
 	      });
     	});
     }
