@@ -62,36 +62,11 @@ var writeToResults = function (songList) {
 	results.append(moreButton);
 };
 
-// var moreButton = "<button class='more'>More</button>";
-
-// $.ajax({
-//   url: "data/songs.json"
-// }).done(writeToResults);
-
-// var moreButtonJQuery = $(".more");
+// writes songs to page from songs.json
 populateSongs.writeFirstSongs(writeToResults);
 
-// $.ajax({
-// 	url: "data/songs.json"
-// }).done(function () {
-// 	// writeToResults();
-// 	$(".more").click(function () {
-// 		$(".more").remove();
-// 		$.ajax({
-// 			url: "data/songs2.json"
-// 		}).done(writeToResults);
-// 	});
-// });
-
+// add songs to page from songs2.json
 getMoreSongs.writeMoreSongs(writeToResults);
-
-
-// $.ajax({
-// 	url: "data/songs2.json"
-// }).done(writeToResults);
-
-
-
 
 var addToResults = function () {
 
@@ -102,7 +77,7 @@ var addToResults = function () {
 	addedSong += "<span class='results-line results-artist'>" + artistNameInput.val() + "</span>";
 	addedSong += "<span class='results-line results-divider'>" + "|" + "</span>";
 	addedSong += "<span class='results-line results-album'>" + albumNameInput.val() + "</span>";
-	addedSong += "<button class='delete'>Delete</button></div>";
+	addedSong += "<button class='delete'>&times</button></div>";
 	results.prepend(addedSong);
 	errorMessage.hide();
 
