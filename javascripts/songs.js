@@ -1,6 +1,6 @@
 define(
-  	["jquery", "populate-songs", "get-more-songs", "write-to-results", "dom", "add-to-results"], 
-  function($, populateSongs, getMoreSongs, writeToResults, dom, addToResults) {
+  	["jquery", "populate-songs", "get-more-songs", "write-to-results", "dom", "add-to-results", "hbs!../templates/songs"], 
+  function($, populateSongs, getMoreSongs, writeToResults, dom, addToResults, Handlebars) {
 
 // var songOptions = $("#song-options-div");
 // var results = $("#results");
@@ -36,8 +36,10 @@ dom.addMusicLink.click(function () {
 	dom.songNameInput.focus();
 });
 
+
 // writes songs to page from songs.json
 populateSongs.writeFirstSongs(writeToResults.writeToResults);
+populateSongs.writeFirstSongs(writeToResults.writeToResults(Handlebars));
 
 //do I put this inside populateSongs.writeFirstSongs(function() {
 

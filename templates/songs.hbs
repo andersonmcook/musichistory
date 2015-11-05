@@ -1,12 +1,21 @@
-//this is a sample, I will want to personalize it to my needs
-
-<div class="">
+<div id="results">
 	{{#each songs}}
-	<div>
-		<h3>{{name}} ({{album.year}})</h3>
-		Performed by {{artist}} on the album {{album.name}}
+	<div class="song-result">
+		<p class="song-name">{{title}}</p>
+		<span class="results-line">{{artist}}<span class="results-divider">|</span>{{artist}}</span>
+		<button class="delete">&times</button>
 	</div>
 	{{/each}}
 
-	<button id="loadMoreSongs" class="separation--top">Load More &gt;</button>
+	<button class='more'>More</button>
 </div>		
+{{!-- 
+
+	for (var i = 0; i < songList.songs.length; i++) {
+				var currentSong = songList.songs[i];
+				var results1 = "<div class='song-result'><p class='song-name'>" + currentSong.title + "</p>";
+				var results2 = "<span class='results-line results-artist'>" + currentSong.artist + "</span>";
+				var results3 = "<span class='results-line results-divider'>" + "|" + "</span>";
+				var results4 = "<span class='results-line results-album'>" + currentSong.album + "</span>";
+				var deleteButton = "<button class='delete'>&times</button></div>";
+				dom.results.append(results1 + results2 + results3 + results4 + deleteButton);	 --}}
