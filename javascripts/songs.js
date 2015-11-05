@@ -39,7 +39,7 @@ dom.addMusicLink.click(function () {
 
 // writes songs to page from songs.json
 populateSongs.writeFirstSongs(writeToResults.writeToResults);
-populateSongs.writeFirstSongs(writeToResults.writeToResults(Handlebars));
+// populateSongs.writeFirstSongs(writeToResults.writeToResults);
 
 //do I put this inside populateSongs.writeFirstSongs(function() {
 
