@@ -6,10 +6,13 @@ $accent-color: tomato;
 
 // sets default background color
 $bg-color: whitesmoke;
+$body-color: white;
 
+// sets error colors
 $error-color: red;
 $error-bg-color: pink;
 
+// sets alternating bg colors for results lines
 $odd-bg-color: gray;
 $even-bg-color: darkgray;
 
@@ -35,15 +38,15 @@ nav {
 		li {
 			list-style-type: none;
 			display: inline;
-			color: white;
+			color: $body-color;
 
 			a {
 				text-decoration: none;
-				color: white;
+				color: $body-color;
 			}
 
 			a:visited {
-				color: white;
+				color: $body-color;
 				text-decoration: none;
 
 			}
@@ -91,7 +94,7 @@ nav {
 }
 
 #add-music > div:nth-of-type(2n+1) {
-	background: white;
+	background: $body-color;
 }
 
 .add-music-input {
@@ -106,7 +109,7 @@ nav {
 }
 
 #form-add-button {
-	background: white;
+	background: $body-color;
 	border: thin solid $accent-color;
 	outline-color: $accent-color;
 	color: $accent-color;
@@ -170,8 +173,8 @@ nav {
 	margin-left: 1em;
 	font-size: .75em;
 	background: $bg-color;
-	color: red;
-	border: 1px solid red;
+	color: $error-color;
+	border: 1px solid $error-color;
 	text-align: center;
 	vertical-align: top;
   width: 2em;
@@ -180,7 +183,7 @@ nav {
 }
 
 .more {
-	background: white;
+	background: $body-color;
 	color: $accent-color;
 	border: 1px solid $accent-color;
 	font-size: .75em;
@@ -216,7 +219,7 @@ label {
 
 .results-line {
 	margin-bottom: 2em;
-	color: white;
+	color: $body-color;
 	/*-webkit-flex-direction: row; */
 }
 
