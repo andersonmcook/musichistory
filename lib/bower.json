@@ -13,5 +13,6 @@
     "tests"
   ],
   "dependencies": {
+    "require-handlebars-plugin": "~1.0.0"
   }
 }
