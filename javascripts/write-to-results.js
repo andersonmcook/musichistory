@@ -1,5 +1,5 @@
-define(["jquery", "songs"], function($, songsJS) {
-	var results = $("#results");
+define(["jquery", "dom"], function($, dom) {
+	// var results = $("#results");
   return {
 // write first json file to page
 		writeToResults: function (songList) {
@@ -12,7 +12,7 @@ define(["jquery", "songs"], function($, songsJS) {
 				var results3 = "<span class='results-line results-divider'>" + "|" + "</span>";
 				var results4 = "<span class='results-line results-album'>" + currentSong.album + "</span>";
 				var deleteButton = "<button class='delete'>&times</button></div>";
-				results.append(results1 + results2 + results3 + results4 + deleteButton);	
+				dom.results.append(results1 + results2 + results3 + results4 + deleteButton);	
 			}
 
 // target delete song button and declare function to delete song parent when delete is clicked			
@@ -23,10 +23,10 @@ define(["jquery", "songs"], function($, songsJS) {
 
 // attach event handler to delete song button	
 			deleteSongButton.click(deleteSong);
-			
+
 // declare more button and append it
 			var moreButton = "<button class='more'>More</button>";
-			results.append(moreButton);
+			dom.results.append(moreButton);
 		}	
 	};		
 });

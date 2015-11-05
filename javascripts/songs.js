@@ -1,6 +1,6 @@
 define(
-  	["jquery", "populate-songs", "get-more-songs", "write-to-results"], 
-  function($, populateSongs, getMoreSongs, writeToResults) {
+  	["jquery", "populate-songs", "get-more-songs", "write-to-results", "dom"], 
+  function($, populateSongs, getMoreSongs, writeToResults, dom) {
 
 var songOptions = $("#song-options-div");
 var results = $("#results");
