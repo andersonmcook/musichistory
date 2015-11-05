@@ -2,33 +2,19 @@ define(
   	["jquery", "populate-songs", "get-more-songs", "write-to-results", "dom", "add-to-results", "hbs!../templates/songs"], 
   function($, populateSongs, getMoreSongs, writeToResults, dom, addToResults, Handlebars) {
 
-// var songOptions = $("#song-options-div");
-// var results = $("#results");
-// var addMusic = $("#add-music");
-
 // hide addMusic
 dom.addMusic.hide();
 dom.results.hide();
 dom.results.fadeIn();
 
-// var errorMessage = $("#error-message");
-
-// var viewMusicLink = $("#view-music-link");
-// var addMusicLink = $("#add-music-link");
-// var profileLink = $("#profile-link");
-
-// var formAddButton = $("#form-add-button");
-
-// var songNameInput = $("#song-name-input");
-// var artistNameInput = $("#artist-name-input");
-// var albumNameInput = $("#album-name-input");
-
+// click view music and it hides addMusic and fades in results and options
 dom.viewMusicLink.click(function () {
 	dom.addMusic.hide();
 	dom.results.fadeIn();
 	dom.songOptions.fadeIn();
 });
 
+//click add music and it hides results and song options
 dom.addMusicLink.click(function () {
 	dom.results.hide();
 	dom.songOptions.hide();
