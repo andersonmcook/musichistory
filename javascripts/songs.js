@@ -2,38 +2,38 @@ define(
   	["jquery", "populate-songs", "get-more-songs", "write-to-results", "dom"], 
   function($, populateSongs, getMoreSongs, writeToResults, dom) {
 
-var songOptions = $("#song-options-div");
-var results = $("#results");
-var addMusic = $("#add-music");
+// var songOptions = $("#song-options-div");
+// var results = $("#results");
+// var addMusic = $("#add-music");
 
 // hide addMusic
-addMusic.hide();
-results.hide();
-results.fadeIn();
+dom.addMusic.hide();
+dom.results.hide();
+dom.results.fadeIn();
 
-var errorMessage = $("#error-message");
+// var errorMessage = $("#error-message");
 
-var viewMusicLink = $("#view-music-link");
-var addMusicLink = $("#add-music-link");
-var profileLink = $("#profile-link");
+// var viewMusicLink = $("#view-music-link");
+// var addMusicLink = $("#add-music-link");
+// var profileLink = $("#profile-link");
 
-var formAddButton = $("#form-add-button");
+// var formAddButton = $("#form-add-button");
 
 var songNameInput = $("#song-name-input");
 var artistNameInput = $("#artist-name-input");
 var albumNameInput = $("#album-name-input");
 
-viewMusicLink.click(function () {
-	addMusic.hide();
-	results.fadeIn();
-	songOptions.fadeIn();
+dom.viewMusicLink.click(function () {
+	dom.addMusic.hide();
+	dom.results.fadeIn();
+	dom.songOptions.fadeIn();
 });
 
-addMusicLink.click(function () {
-	results.hide();
-	songOptions.hide();
-	addMusic.fadeIn();
-	songNameInput.focus();
+dom.addMusicLink.click(function () {
+	dom.results.hide();
+	dom.songOptions.hide();
+	dom.addMusic.fadeIn();
+	dom.songNameInput.focus();
 });
 
 var formAdd = function () {
@@ -84,18 +84,18 @@ var addToResults = function () {
 		addedSong += "<span class='results-line results-divider'>" + "|" + "</span>";
 		addedSong += "<span class='results-line results-album'>" + albumName + "</span>";
 		addedSong += "<button class='delete'>&times</button></div>";
-		results.prepend(addedSong);
-		errorMessage.hide();
+		dom.results.prepend(addedSong);
+		dom.errorMessage.hide();
 
 // resets add form input values
-		songNameInput.val("");
-		artistNameInput.val("");
-		albumNameInput.val("");
+		dom.songNameInput.val("");
+		dom.artistNameInput.val("");
+		dom.albumNameInput.val("");
 
 // hides add music form, shows main page
-		addMusic.hide();
-		songOptions.show();
-		results.show();
+		dom.addMusic.hide();
+		dom.songOptions.show();
+		dom.results.show();
 //duplicate from writeToResults
 		var deleteSongButton = $(".delete");
 		var deleteSong = function () {
@@ -105,21 +105,21 @@ var addToResults = function () {
 
 // pops up error message if any value lengths are 0
 		} else {
-			errorMessage.html("Add a song, artist, and album");
-			errorMessage.show();
+			dom.errorMessage.html("Add a song, artist, and album");
+			dom.errorMessage.show();
 		}
 }; //end of addToResults
 
 var addInputFields = $("#add-music").children();
 
-formAddButton.click(formAdd);
+dom.formAddButton.click(formAdd);
 addInputFields.keydown(function (event) {
 	if (event.which === 13) {
 		formAdd();
 	}
 });
 
-formAddButton.click(addToResults);
+dom.formAddButton.click(addToResults);
 addInputFields.keydown(function (event) {
 	if (event.which === 13) {
 		addToResults();
