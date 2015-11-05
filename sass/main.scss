@@ -41,6 +41,17 @@ nav {
 				text-decoration: none;
 				color: white;
 			}
+
+			a:visited {
+				color: white;
+				text-decoration: none;
+
+			}
+
+			a:hover {
+				color: $accent-color;
+				text-decoration: none;
+			}
 		}
 
 		li:not(:last-child) {
@@ -49,10 +60,6 @@ nav {
 	}
 
 
-	a:hover {
-		color: $accent-color;
-		text-decoration: none;
-	}
 }
 
 .hidden {

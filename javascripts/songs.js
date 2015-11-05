@@ -1,6 +1,6 @@
 define(
-  	["jquery", "populate-songs", "get-more-songs"], 
-  function($, populateSongs, getMoreSongs) {
+  	["jquery", "populate-songs", "get-more-songs", "write-to-results"], 
+  function($, populateSongs, getMoreSongs, writeToResults) {
 
 var songOptions = $("#song-options-div");
 var results = $("#results");
@@ -41,30 +41,30 @@ var formAdd = function () {
 	}
 };
 
-var writeToResults = function (songList) {
-	for (var i = 0; i < songList.songs.length; i++) {
-		var currentSong = songList.songs[i];
-		var results1 = "<div class='song-result'><p class='song-name'>" + currentSong.title + "</p>";
-		var results2 = "<span class='results-line results-artist'>" + currentSong.artist + "</span>";
-		var results3 = "<span class='results-line results-divider'>" + "|" + "</span>";
-		var results4 = "<span class='results-line results-album'>" + currentSong.album + "</span>";
-		var deleteButton = "<button class='delete'>&times</button></div>";
-		results.append(results1 + results2 + results3 + results4 + deleteButton);	
-	}
-	var deleteSongButton = $(".delete");
-	var deleteSong = function () {
-		$(this).parent(".song-result").remove();
-	};	
-	deleteSongButton.click(deleteSong);
-	var moreButton = "<button class='more'>More</button>";
-	results.append(moreButton);
-};
+// var writeToResults = function (songList) {
+// 	for (var i = 0; i < songList.songs.length; i++) {
+// 		var currentSong = songList.songs[i];
+// 		var results1 = "<div class='song-result'><p class='song-name'>" + currentSong.title + "</p>";
+// 		var results2 = "<span class='results-line results-artist'>" + currentSong.artist + "</span>";
+// 		var results3 = "<span class='results-line results-divider'>" + "|" + "</span>";
+// 		var results4 = "<span class='results-line results-album'>" + currentSong.album + "</span>";
+// 		var deleteButton = "<button class='delete'>&times</button></div>";
+// 		results.append(results1 + results2 + results3 + results4 + deleteButton);	
+// 	}
+// 	var deleteSongButton = $(".delete");
+// 	var deleteSong = function () {
+// 		$(this).parent(".song-result").remove();
+// 	};	
+// 	deleteSongButton.click(deleteSong);
+// 	var moreButton = "<button class='more'>More</button>";
+// 	results.append(moreButton);
+// };
 
 // writes songs to page from songs.json
-populateSongs.writeFirstSongs(writeToResults);
+populateSongs.writeFirstSongs(writeToResults.writeToResults);
 
 // add songs to page from songs2.json
-getMoreSongs.writeMoreSongs(writeToResults);
+getMoreSongs.writeMoreSongs(writeToResults.writeToResults);
 
 // add song from add form to results
 var addToResults = function () {
