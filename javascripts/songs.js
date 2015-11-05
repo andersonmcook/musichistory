@@ -38,9 +38,7 @@ addMusicLink.click(function () {
 
 var formAdd = function () {
 	if (songNameInput.val().length !== 0 && artistNameInput.val().length !== 0 && albumNameInput.val().length !== 0) {
-	// songs.unshift(songNameInput.val() + " - by " + artistNameInput.val() + " on the album " + albumNameInput.val());
-	// console.log("songs");
-}
+	}
 };
 
 var writeToResults = function (songList) {
@@ -68,39 +66,49 @@ populateSongs.writeFirstSongs(writeToResults);
 // add songs to page from songs2.json
 getMoreSongs.writeMoreSongs(writeToResults);
 
+// add song from add form to results
 var addToResults = function () {
 
+// checks input value lengths to see if they're 0 and if they're not, runs addToResults
 	if (songNameInput.val().length !== 0 && artistNameInput.val().length !== 0 && albumNameInput.val().length !== 0) {
 
-	var addedSong = "";
-	addedSong += "<div class='song-result'><p class='song-name'>" + songNameInput.val() + "</p>";
-	addedSong += "<span class='results-line results-artist'>" + artistNameInput.val() + "</span>";
-	addedSong += "<span class='results-line results-divider'>" + "|" + "</span>";
-	addedSong += "<span class='results-line results-album'>" + albumNameInput.val() + "</span>";
-	addedSong += "<button class='delete'>&times</button></div>";
-	results.prepend(addedSong);
-	errorMessage.hide();
+// keeps user from injecting code into inputs
+		var songName = songNameInput.val().replace(/</g, "&lt;").replace(/>/g, "&gt;");
+		var artistName = artistNameInput.val().replace(/</g, "&lt;").replace(/>/g, "&gt;");
+		var albumName = albumNameInput.val().replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
-	songNameInput.val("");
-	artistNameInput.val("");
-	albumNameInput.val("");
+// writes addedSong to page
+		var addedSong = "";
+		addedSong += "<div class='song-result'><p class='song-name'>" + songName + "</p>";
+		addedSong += "<span class='results-line results-artist'>" + artistName + "</span>";
+		addedSong += "<span class='results-line results-divider'>" + "|" + "</span>";
+		addedSong += "<span class='results-line results-album'>" + albumName + "</span>";
+		addedSong += "<button class='delete'>&times</button></div>";
+		results.prepend(addedSong);
+		errorMessage.hide();
 
-	addMusic.hide();
-	songOptions.show();
-	results.show();
+// resets add form input values
+		songNameInput.val("");
+		artistNameInput.val("");
+		albumNameInput.val("");
 
+// hides add music form, shows main page
+		addMusic.hide();
+		songOptions.show();
+		results.show();
 //duplicate from writeToResults
-	var deleteSongButton = $(".delete");
-	var deleteSong = function () {
-		$(this).parent(".song-result").remove();
-	};	
-	deleteSongButton.click(deleteSong);
+		var deleteSongButton = $(".delete");
+		var deleteSong = function () {
+			$(this).parent(".song-result").remove();
+		};	
+		deleteSongButton.click(deleteSong);
 
-	} else {
-		errorMessage.html("Add a song, artist, and album");
-		errorMessage.show();
-	}
-};
+// pops up error message if any value lengths are 0
+		} else {
+			errorMessage.html("Add a song, artist, and album");
+			errorMessage.show();
+		}
+}; //end of addToResults
 
 var addInputFields = $("#add-music").children();
 
