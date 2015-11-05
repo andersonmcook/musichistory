@@ -180,13 +180,19 @@ nav {
 	outline-color: $accent-color;
 }
 
-/*label {
-	margin-top: .5em;
-}*/
+label {
+	font-weight: normal;
+}
 
 .smaller-margin {
 	display: block;
 	margin-top: 0;
+	margin-bottom: .125em;
+}
+
+.smaller-margin input[type=checkbox] {
+	margin-right: .25em;
+	vertical-align: top;
 }
 
 /*.bordered {

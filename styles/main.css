@@ -124,12 +124,17 @@ nav {
   font-size: .75em;
   outline-color: tomato; }
 
-/*label {
-	margin-top: .5em;
-}*/
+label {
+  font-weight: normal; }
+
 .smaller-margin {
   display: block;
-  margin-top: 0; }
+  margin-top: 0;
+  margin-bottom: .125em; }
+
+.smaller-margin input[type=checkbox] {
+  margin-right: .25em;
+  vertical-align: top; }
 
 /*.bordered {
 	border: .125em solid black;
