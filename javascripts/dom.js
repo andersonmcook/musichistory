@@ -14,6 +14,9 @@ define(["jquery"], function($) {
 	var songNameInput = $("#song-name-input");
 	var artistNameInput = $("#artist-name-input");
 	var albumNameInput = $("#album-name-input");
+
+	var addInputFields = $("#add-music").children();
+
   return {
   	songOptions: songOptions,
   	results: results,
@@ -25,6 +28,7 @@ define(["jquery"], function($) {
   	formAddButton: formAddButton,
   	songNameInput: songNameInput,
   	artistNameInput: artistNameInput,
-  	albumNameInput: albumNameInput
+  	albumNameInput: albumNameInput,
+  	addInputFields: addInputFields
   };
  });

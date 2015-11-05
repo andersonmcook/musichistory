@@ -1,5 +1,4 @@
 define(["jquery", "dom"], function($, dom) {
-	// var results = $("#results");
   return {
 // write first json file to page
 		writeToResults: function (songList) {
