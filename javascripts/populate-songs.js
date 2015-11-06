@@ -4,6 +4,8 @@ define(["jquery"], function($) {
       $.ajax({
 			  url: "./data/songs.json"
 			}).done(function(jsonDataSentByjQuery) {
+				console.log("callbackFunctionReference", callbackFunctionReference);
+				console.log("jsonDataSentByjQuery", jsonDataSentByjQuery);
 // // handlebars thing
 // 	// this is a template, i will need to personalize it to my project
 // 		  	require(['hbs!../templates/songs'], function (songTemplate) {

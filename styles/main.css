@@ -35,16 +35,9 @@ nav {
 .display-none {
   display: none; }
 
-/*#songs-and-options {
-	flex: 1 100%;
-	width: 400px;
-} */
 #song-options-div {
-  /*flex-grow: 1;*/
-  /*width: 300px;*/
-  /*margin: auto;*/
-  /*float: left;*/
   padding: 1em;
+  margin: 0 1em;
   background: whitesmoke; }
 
 #add-music > div:nth-of-type(2n+1) {
@@ -52,11 +45,15 @@ nav {
 
 .add-music-input {
   background: whitesmoke;
-  padding: 0;
-  margin: 0; }
+  padding: 1em;
+  margin: 0 1em; }
 
-#add-music label, #add-music button {
-  margin: 1em auto;
+#add-music button {
+  margin: 0 auto;
+  text-align: center; }
+
+#add-music label {
+  margin-bottom: 1em;
   text-align: center; }
 
 #form-add-button {
@@ -75,14 +72,10 @@ nav {
 #genre-title {
   margin: .5em; }
 
-/*.submit {
-	font-size: 2em;
-	margin: 2.5em 0 0; 
-	color: black;
-}*/
 #results {
   background: whitesmoke;
-  padding: 1em; }
+  padding: 1em;
+  margin: 0 1em; }
 
 .song-result {
   padding: .25em .5em; }

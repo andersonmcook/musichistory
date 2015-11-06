@@ -1,5 +1,12 @@
 define(["jquery", "dom"], function($, dom) {
   return {
+
+		// formAdd: function () {
+		// 	if (songNameInput.val().length !== 0 && artistNameInput.val().length !== 0 && albumNameInput.val().length !== 0) {
+		// 	}
+		// };
+
+
 // add song from add form to results
 		addToResults: function () {
 

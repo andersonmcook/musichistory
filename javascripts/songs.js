@@ -22,7 +22,6 @@ dom.addMusicLink.click(function () {
 	dom.songNameInput.focus();
 });
 
-
 // writes songs to page from songs.json
 populateSongs.writeFirstSongs(writeToResults.writeToResults);
 // populateSongs.writeFirstSongs(writeToResults.writeToResults);
