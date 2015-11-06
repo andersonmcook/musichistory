@@ -1,21 +1,33 @@
+// define(["jquery"], function($) {
+//   return {
+//     writeMoreSongs: function(callbackFunctionReference) {
+//     	console.log("you have clicked nothing");
+//     	// $(".more").click(function () {
+//   		// $("#results").on("click", $(".more"), function() {
+//       $("#results").on("click", "button", function() {
+//             // $(".more").on("click", $(".more"), function () {
+//         		console.log("you have clicked the more button");
+//         		$(".more").remove();
+//                 $.ajax({
+//     			  url: "data/songs2.json"
+//     			}).done(function(jsonDataSentByjQuery) {
+//                     callbackFunctionReference(jsonDataSentByjQuery);
+//                     $(".more").remove();
+//                 });
+// 	      });
+//     	// });
+//     }
+//   };
+// });
+
+
 define(["jquery"], function($) {
   return {
-    writeMoreSongs: function(callbackFunctionReference) {
-    	console.log("you have clicked nothing");
-    	// $(".more").click(function () {
-  		// $("#results").on("click", $(".more"), function() {
-      $("#results").on("click", "button", function() {
-            // $(".more").on("click", $(".more"), function () {
-        		console.log("you have clicked the more button");
-        		$(".more").remove();
-                $.ajax({
-    			  url: "data/songs2.json"
-    			}).done(function(jsonDataSentByjQuery) {
-                    callbackFunctionReference(jsonDataSentByjQuery);
-                    $(".more").remove();
-                });
-	      });
-    	// });
+    writeMoreSongs: function(callback) {
+      $.ajax({
+        url: "./data/songs2.json"
+      }).done(callback);
+
     }
   };
 });

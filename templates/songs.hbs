@@ -1,4 +1,3 @@
-<div id="results">
 	{{#each songs}}
 	<div class="song-result">
 		<p class="song-name">{{title}}</p>
@@ -8,14 +7,3 @@
 	{{/each}}
 
 	<button class='more'>More</button>
-</div>		
-{{!-- 
-
-	for (var i = 0; i < songList.songs.length; i++) {
-				var currentSong = songList.songs[i];
-				var results1 = "<div class='song-result'><p class='song-name'>" + currentSong.title + "</p>";
-				var results2 = "<span class='results-line results-artist'>" + currentSong.artist + "</span>";
-				var results3 = "<span class='results-line results-divider'>" + "|" + "</span>";
-				var results4 = "<span class='results-line results-album'>" + currentSong.album + "</span>";
-				var deleteButton = "<button class='delete'>&times</button></div>";
-				dom.results.append(results1 + results2 + results3 + results4 + deleteButton);	 --}}

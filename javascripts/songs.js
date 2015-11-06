@@ -1,6 +1,6 @@
 define(
-  	["jquery", "populate-songs", "get-more-songs", "write-to-results", "dom", "add-to-results", "hbs!../templates/songs"], 
-  function($, populateSongs, getMoreSongs, writeToResults, dom, addToResults, Handlebars) {
+  	["jquery", "populate-songs", "get-more-songs", "write-to-results", "dom", "add-to-results"], 
+  function($, populateSongs, getMoreSongs, writeToResults, dom, addToResults) {
 
 // hide addMusic
 dom.addMusic.hide();
@@ -23,9 +23,20 @@ dom.addMusicLink.click(function () {
 });
 
 // writes songs to page from songs.json
-populateSongs.writeFirstSongs(writeToResults.writeToResults);
+populateSongs.writeFirstSongs(imCallingYou);
 // populateSongs.writeFirstSongs(writeToResults.writeToResults);
 
+function imCallingYou(songList) {
+	require(['hbs!../templates/songs'], function (songTemplate) {
+		$("#results").append(songTemplate(songList));
+		console.log(songTemplate);
+		console.log(songList);
+	});
+}
+
+// return {
+// 	imCallingYou: imCallingYou
+// }
 //do I put this inside populateSongs.writeFirstSongs(function() {
 
 // })?
@@ -39,7 +50,8 @@ populateSongs.writeFirstSongs(writeToResults.writeToResults);
 // end of handlebars thing?
 
 // add songs to page from songs2.json
-getMoreSongs.writeMoreSongs(writeToResults.writeToResults);
+// getMoreSongs.writeMoreSongs(writeToResults.writeToResults);
+// getMoreSongs.writeMoreSongs(imCallingYou);
 
 
 
@@ -50,6 +62,7 @@ dom.addInputFields.keydown(function (event) {
 		addToResults.addToResults();
 	}
 });
+
 
 }); //end of jQuery
 
