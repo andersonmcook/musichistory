@@ -45,11 +45,11 @@ nav {
 
 .add-music-input {
   background: whitesmoke;
-  padding: 1em;
+  padding: 1em 0 0 0;
   margin: 0 1em; }
 
 #add-music button {
-  margin: 0 auto;
+  margin: 0 auto 1em;
   text-align: center; }
 
 #add-music label {
@@ -78,12 +78,12 @@ nav {
   margin: 0 1em; }
 
 .song-result {
-  padding: .25em .5em; }
+  padding: .125em .5em .25em; }
 
 .song-name {
   font-size: 2em;
   color: whitesmoke;
-  margin: 0 0 .25em; }
+  margin: 0; }
 
 .song-result:not(:last-child) {
   margin-bottom: .5em; }
@@ -132,20 +132,12 @@ label {
   margin-right: .25em;
   vertical-align: top; }
 
-/*.bordered {
-	border: .125em solid black;
-	margin: .5em; 
-	box-sizing: border-box;
-	border-radius: .25em;
-}*/
 .displayblock {
-  display: block;
-  /*margin: .25em 0; */ }
+  display: block; }
 
 .results-line {
   margin-bottom: 2em;
-  color: white;
-  /*-webkit-flex-direction: row; */ }
+  color: white; }
 
 select {
   font-size: 1em;
@@ -154,11 +146,8 @@ select {
 
 input[type=text] {
   font-size: 1em;
-  /*margin-left: .5em;*/
-  /*outline: thin solid tomato;*/
   border: thin solid tomato;
-  outline-color: tomato;
-  /*outline-width: thick;*/ }
+  outline-color: tomato; }
 
 input[type=text]:focus {
   color: tomato; }
@@ -176,11 +165,9 @@ button {
   background: blue; }
 
 .add-music-label {
-  /*letter-spacing: 1em;*/
   font-size: 1.5em;
   text-align: center;
-  font-weight: lighter;
-  /*color: tomato;*/ }
+  font-weight: lighter; }
 
 /*@media screen and (max-width: 750px), screen and (max-device-width: 700px) {
 	#song-options-div {

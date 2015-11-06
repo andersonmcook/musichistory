@@ -79,11 +79,11 @@ nav {
 	background: $bg-color;
 }
 
-#add-music {
-	// padding: 1em;
-	// background: $bg-color;
-	// margin: 0 auto;
-}
+// #add-music {
+// 	// padding: 1em;
+// 	// background: $bg-color;
+// 	// margin: 0 auto;
+// }
 
 #add-music > div:nth-of-type(2n+1) {
 	background: $body-color;
@@ -91,12 +91,12 @@ nav {
 
 .add-music-input {
 	background: $bg-color;
-	padding: 1em;
+	padding: 1em 0 0 0;
 	margin: 0 1em;
 }
 
 #add-music button {
-	margin: 0 auto;
+	margin: 0 auto 1em;
 	text-align: center;
 }
 
@@ -131,13 +131,13 @@ nav {
 }
 
 .song-result {
-	padding: .25em .5em;
+	padding: .125em .5em .25em;
 }
 
 .song-name {
 	font-size: 2em;
 	color: $bg-color;
-	margin: 0 0 .25em;
+	margin: 0;
 }
 
 .song-result:not(:last-child) {
@@ -197,22 +197,13 @@ label {
 	vertical-align: top;
 }
 
-/*.bordered {
-	border: .125em solid black;
-	margin: .5em; 
-	box-sizing: border-box;
-	border-radius: .25em;
-}*/
-
 .displayblock {
 	display: block;
-	/*margin: .25em 0; */
 }
 
 .results-line {
 	margin-bottom: 2em;
 	color: $body-color;
-	/*-webkit-flex-direction: row; */
 }
 
 select {
@@ -223,11 +214,8 @@ select {
 
 input[type=text] {
 	font-size: 1em;
-	/*margin-left: .5em;*/
-	/*outline: thin solid tomato;*/
 	border: thin solid $accent-color;
 	outline-color: $accent-color;
-	/*outline-width: thick;*/
 }
 
 input[type=text]:focus {
@@ -251,11 +239,9 @@ button {
 }
 
 .add-music-label {
-	/*letter-spacing: 1em;*/
 	font-size: 1.5em;
 	text-align: center;
 	font-weight: lighter;
-	/*color: tomato;*/
 }
 
 /*@media screen and (max-width: 750px), screen and (max-device-width: 700px) {

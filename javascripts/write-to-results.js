@@ -1,9 +1,14 @@
-define(["jquery", "dom", "hbs!../templates/songs"], function($, dom, Handlebars) {
+define(["jquery", "dom"], function($, dom) {
   return {
 // write first json file to page
 		writeToResults: function (songList) {
 
 			// $("#results").html(Handlebars(songList));
+
+ // 	require(['hbs!../templates/songs'], function (songTemplate) {
+	// // //change selector to where I'm putting songs
+	// // 	  		$("#results").html(songTemplate(songs));
+	// // 	  	});
 
 // loop over songList and write to page
 			for (var i = 0; i < songList.songs.length; i++) {

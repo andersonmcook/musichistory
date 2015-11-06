@@ -22,36 +22,28 @@ dom.addMusicLink.click(function () {
 	dom.songNameInput.focus();
 });
 
-// writes songs to page from songs.json
-populateSongs.writeFirstSongs(imCallingYou);
-// populateSongs.writeFirstSongs(writeToResults.writeToResults);
-
+// runs the json file through handlebars template which writes it to the results div
 function imCallingYou(songList) {
 	require(['hbs!../templates/songs'], function (songTemplate) {
 		$("#results").append(songTemplate(songList));
-		console.log(songTemplate);
-		console.log(songList);
 	});
 }
 
-// return {
-// 	imCallingYou: imCallingYou
-// }
-//do I put this inside populateSongs.writeFirstSongs(function() {
+// writes songs to page from songs.json
+populateSongs.writeFirstSongs(imCallingYou);
 
-// })?
-// handlebars thing?
-	// this is a template, i will need to personalize it to my project
-	// 	  	require(['hbs!../templates/songs'], function (songTemplate) {
-	// //change selector to where I'm putting songs
-	// 	  		$("#results").html(songTemplate(songs));
-	// 	  	});
 
-// end of handlebars thing?
+// when you click on More it will add more songs from get-more-songs.js
+dom.results.on("click", ".more", function () {
+	$(".more").remove();
+	getMoreSongs.writeMoreSongs(imCallingYou);
+	$(".more").remove();
+});
 
-// add songs to page from songs2.json
-// getMoreSongs.writeMoreSongs(writeToResults.writeToResults);
-// getMoreSongs.writeMoreSongs(imCallingYou);
+// click on the delete button to delete its parent element which is the song
+dom.results.on("click", ".delete", function () {
+	$(this).parent(".song-result").remove();
+});
 
 
 
