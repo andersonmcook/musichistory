@@ -9,24 +9,26 @@ define(["jquery", "dom"], function($, dom) {
 
 // add song from add form to results
 		addToResults: function () {
-
+			var songName;
+			var artistName;
+			var albumName;
 // checks input value lengths to see if they're 0 and if they're not, runs addToResults
 			if (dom.songNameInput.val().length !== 0 && dom.artistNameInput.val().length !== 0 && dom.albumNameInput.val().length !== 0) {
 
 // keeps user from injecting code into inputs
-				var songName = dom.songNameInput.val().replace(/</g, "&lt;").replace(/>/g, "&gt;");
-				var artistName = dom.artistNameInput.val().replace(/</g, "&lt;").replace(/>/g, "&gt;");
-				var albumName = dom.albumNameInput.val().replace(/</g, "&lt;").replace(/>/g, "&gt;");
+				songName = dom.songNameInput.val().replace(/</g, "&lt;").replace(/>/g, "&gt;");
+				artistName = dom.artistNameInput.val().replace(/</g, "&lt;").replace(/>/g, "&gt;");
+				albumName = dom.albumNameInput.val().replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
 // writes addedSong to page
-				var addedSong = "";
-				addedSong += "<div class='song-result'><p class='song-name'>" + songName + "</p>";
-				addedSong += "<span class='results-line results-artist'>" + artistName + "</span>";
-				addedSong += "<span class='results-line results-divider'>" + "|" + "</span>";
-				addedSong += "<span class='results-line results-album'>" + albumName + "</span>";
-				addedSong += "<button class='delete'>&times</button></div>";
-				dom.results.prepend(addedSong);
-				dom.errorMessage.hide();
+				// var addedSong = "";
+				// addedSong += "<div class='song-result'><p class='song-name'>" + songName + "</p>";
+				// addedSong += "<span class='results-line results-artist'>" + artistName + "</span>";
+				// addedSong += "<span class='results-line results-divider'>" + "|" + "</span>";
+				// addedSong += "<span class='results-line results-album'>" + albumName + "</span>";
+				// addedSong += "<button class='delete'>&times</button></div>";
+				// dom.results.prepend(addedSong);
+				// dom.errorMessage.hide();
 
 // resets add form input values
 				dom.songNameInput.val("");
@@ -51,6 +53,13 @@ define(["jquery", "dom"], function($, dom) {
 				}
 //end of addToResults
 
+				return {
+					songs: [{
+						title: songName,
+						artist: artistName,
+						album: albumName
+					}]
+				};
 		}	
 	};		
 });

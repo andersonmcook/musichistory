@@ -23,37 +23,58 @@ dom.addMusicLink.click(function () {
 });
 
 // runs the json file through handlebars template which writes it to the results div
-function imCallingYou(songList) {
+function handlebarsToDOM(songList) {
 	require(['hbs!../templates/songs'], function (songTemplate) {
 		$("#results").append(songTemplate(songList));
 	});
 }
 
 // writes songs to page from songs.json
-populateSongs.writeFirstSongs(imCallingYou);
+populateSongs.writeFirstSongs(handlebarsToDOM);
 
 
 // when you click on More it will add more songs from get-more-songs.js
+// i want to remove the More button here, too
 dom.results.on("click", ".more", function () {
-	$(".more").remove();
-	getMoreSongs.writeMoreSongs(imCallingYou);
-	$(".more").remove();
+	getMoreSongs.writeMoreSongs(handlebarsToDOM);
 });
+
+// dom.results.on("click", ".more", function () {
+// 	$(".more").remove();
+// });
 
 // click on the delete button to delete its parent element which is the song
 dom.results.on("click", ".delete", function () {
 	$(this).parent(".song-result").remove();
 });
 
+var addSongs =  function (event) {
+	if (event.which === 13 || event.which === 1) {
 
+		require(['hbs!../templates/songs'], function (songTemplate) {
+				console.log('working');
+				$("#results").prepend(songTemplate(addToResults.addToResults()));
+			});
+
+		// addToResults.addToResults();
+	}
+};
 
 //some stuff
-dom.formAddButton.click(addToResults.addToResults);
-dom.addInputFields.keydown(function (event) {
-	if (event.which === 13) {
-		addToResults.addToResults();
-	}
-});
+dom.formAddButton.click(addSongs);
+dom.addInputFields.keydown(addSongs);
+	// function (event) {
+	// if (event.which === 1 || event.which === 13) {
+
+	// 	// require(['hbs!../templates/songs'], function (songTemplate) {
+	// 	// 		console.log('working');
+	// 	// 		$("#results").prepend(songTemplate(addToResults.addToResults()));
+	// 	// 	});
+
+	// 	// addToResults.addToResults();
+	// }
+// }
+
 
 
 }); //end of jQuery
