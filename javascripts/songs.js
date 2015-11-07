@@ -52,7 +52,6 @@ var addSongs =  function (event) {
 	if (event.which === 13 || event.which === 1) {
 
 		require(['hbs!../templates/addsong'], function (addsongTemplate) {
-				console.log('working');
 				$("#results").prepend(addsongTemplate(addToResults.addToResults()));
 			});
 

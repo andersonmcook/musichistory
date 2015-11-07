@@ -46,13 +46,6 @@ define(["jquery", "dom"], function($, dom) {
 				};	
 				deleteSongButton.click(deleteSong);
 
-// pops up error message if any value lengths are 0
-				} else {
-					dom.errorMessage.html("Add a song, artist, and album");
-					dom.errorMessage.show();
-				}
-//end of addToResults
-
 				return {
 					songs: [{
 						title: songName,
@@ -60,6 +53,21 @@ define(["jquery", "dom"], function($, dom) {
 						album: albumName
 					}]
 				};
+
+// pops up error message if any value lengths are 0
+				} else {
+					dom.errorMessage.html("Add a song, artist, and album");
+					dom.errorMessage.show();
+				}
+//end of addToResults
+
+				// return {
+				// 	songs: [{
+				// 		title: songName,
+				// 		artist: artistName,
+				// 		album: albumName
+				// 	}]
+				// };
 		}	
 	};		
 });
