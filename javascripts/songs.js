@@ -51,9 +51,9 @@ dom.results.on("click", ".delete", function () {
 var addSongs =  function (event) {
 	if (event.which === 13 || event.which === 1) {
 
-		require(['hbs!../templates/songs'], function (songTemplate) {
+		require(['hbs!../templates/addsong'], function (addsongTemplate) {
 				console.log('working');
-				$("#results").prepend(songTemplate(addToResults.addToResults()));
+				$("#results").prepend(addsongTemplate(addToResults.addToResults()));
 			});
 
 		// addToResults.addToResults();
