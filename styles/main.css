@@ -169,6 +169,9 @@ button {
   text-align: center;
   font-weight: lighter; }
 
+.red {
+  background: red; }
+
 /*@media screen and (max-width: 750px), screen and (max-device-width: 700px) {
 	#song-options-div {
 		box-sizing: border-box;

@@ -2,11 +2,6 @@ define(
   	["jquery", "populate-songs", "get-more-songs", "write-to-results", "dom", "add-to-results"], 
   function($, populateSongs, getMoreSongs, writeToResults, dom, addToResults) {
 
-// hide addMusic
-dom.addMusic.hide();
-dom.results.hide();
-dom.results.fadeIn();
-
 // click view music and it hides addMusic and fades in results and options
 dom.viewMusicLink.click(function () {
 	dom.addMusic.hide();
