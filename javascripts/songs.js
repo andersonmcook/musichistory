@@ -34,47 +34,29 @@ populateSongs.writeFirstSongs(handlebarsToDOM);
 
 
 // when you click on More it will add more songs from get-more-songs.js
-// i want to remove the More button here, too
 dom.results.on("click", ".more", function () {
+	$(".more").remove();
 	getMoreSongs.writeMoreSongs(handlebarsToDOM);
 });
-
-// dom.results.on("click", ".more", function () {
-// 	$(".more").remove();
-// });
 
 // click on the delete button to delete its parent element which is the song
 dom.results.on("click", ".delete", function () {
 	$(this).parent(".song-result").remove();
 });
 
+// function to add songs from add form
 var addSongs =  function (event) {
 	if (event.which === 13 || event.which === 1) {
 
 		require(['hbs!../templates/addsong'], function (addsongTemplate) {
 				$("#results").prepend(addsongTemplate(addToResults.addToResults()));
 			});
-
-		// addToResults.addToResults();
 	}
 };
 
-//some stuff
+// adds song if conditions are met and user clicks button or presses enter
 dom.formAddButton.click(addSongs);
 dom.addInputFields.keydown(addSongs);
-	// function (event) {
-	// if (event.which === 1 || event.which === 13) {
-
-	// 	// require(['hbs!../templates/songs'], function (songTemplate) {
-	// 	// 		console.log('working');
-	// 	// 		$("#results").prepend(songTemplate(addToResults.addToResults()));
-	// 	// 	});
-
-	// 	// addToResults.addToResults();
-	// }
-// }
-
-
 
 }); //end of jQuery
 
