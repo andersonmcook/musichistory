@@ -1,0 +1,55 @@
+{
+  "songs": {
+    "bloomingamygdala": {
+      "title": "Blooming Amygdala", 
+      "artist": "Dendritic Arbor",
+      "album": "Romantic Love"
+    },
+    "conduit": {
+      "title": "conduit", 
+      "artist": "Converge",
+      "album": "When Forever Comes Crashing"
+    },
+    "breedregret": {
+      "title": "Breed Regret", 
+      "artist": "Yautja",
+      "album": "Songs of Lament"
+    },
+    "pleasurerace": {
+      "title": "Pleasure Race", 
+      "artist": "Pissed Jeans",
+      "album": "King of Jeans"
+    },
+    "aghartha": {
+      "title":"Aghartha",
+      "artist": "Sunn O)))",
+      "album": "Monoliths & Dimensions"
+    },
+    "deadmentellnotalesspokenversion": {
+      "title":"Dead Men Tell No Tales (Spoken Version)",
+      "artist": "Monarch",
+      "album": "Dead Men Tell No Tales"
+    },
+    "exordium": {
+      "title":"Exordium",
+      "artist": "Alraune",
+      "album": "The Process of Self-Immolation"
+    },
+    "mountain": {
+      "title":"Mountain",
+      "artist": "Baring Teeth",
+      "album": "Ghost Chorus Among The Ruins"
+    },
+    "monaco": {
+      "title":"Monaco",
+      "artist": "Playing Enemy",
+      "album": "I Was Your City"
+    },
+    "gun": {
+      "title":"Gun",
+      "artist": "Death Engine",
+      "album": "Amen"
+    }
+    
+  }
+}

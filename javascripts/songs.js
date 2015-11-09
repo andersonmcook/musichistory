@@ -41,11 +41,11 @@ function albumDropdown(songList) {
 
 // writes artist dropdown to page
 populateSongs.writeFirstSongs(artistDropdown);
-getMoreSongs.writeMoreSongs(artistDropdown);
+// getMoreSongs.writeMoreSongs(artistDropdown);
 
 // writes album dropdown to page
 populateSongs.writeFirstSongs(albumDropdown);
-getMoreSongs.writeMoreSongs(albumDropdown);
+// getMoreSongs.writeMoreSongs(albumDropdown);
 
 // writes songs to page from songs.json
 populateSongs.writeFirstSongs(handlebarsToDOM);
