@@ -37,14 +37,13 @@ nav {
 
 #song-options-div {
   padding: 1em;
-  margin: 0 1em;
-  background: whitesmoke; }
+  background: white; }
 
 #add-music > div:nth-of-type(2n+1) {
   background: white; }
 
 .add-music-input {
-  background: whitesmoke;
+  background: white;
   padding: 1em 0 0 0;
   margin: 0 1em; }
 
@@ -74,8 +73,7 @@ nav {
 
 #results {
   background: whitesmoke;
-  padding: 1em;
-  margin: 0 1em; }
+  padding: 1em; }
 
 .song-result {
   padding: .125em .5em .25em; }
@@ -113,11 +111,11 @@ nav {
   height: 2em;
   line-height: .75em; }
 
-.more {
+.more, .filter {
   background: white;
   color: tomato;
   border: 1px solid tomato;
-  font-size: .75em;
+  font-size: 1em;
   outline-color: tomato; }
 
 label {
@@ -131,6 +129,9 @@ label {
 .smaller-margin input[type=checkbox] {
   margin-right: .25em;
   vertical-align: top; }
+
+#song-options-div label:last-child {
+  margin-bottom: .5em; }
 
 .displayblock {
   display: block; }
@@ -168,9 +169,6 @@ button {
   font-size: 1.5em;
   text-align: center;
   font-weight: lighter; }
-
-.red {
-  background: red; }
 
 /*@media screen and (max-width: 750px), screen and (max-device-width: 700px) {
 	#song-options-div {
