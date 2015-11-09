@@ -1,3 +1,5 @@
+// deprecated
+
 define(["jquery", "dom"], function($, dom) {
   return {
 // write first json file to page
