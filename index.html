@@ -47,8 +47,25 @@
 				<div class="row">
 					<div class="col-sm-1"></div>
 					<div id="song-options-div" class="bordered form-style col-sm-3">
-						<ul id="artists"></ul>
-						<ul id="albums"></ul>
+
+						<div class="dropdown">
+						  <button class="btn btn-default dropdown-toggle a-dropdown" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						    Artists
+						    <span class="caret"></span>
+						  </button>
+							<ul id="artists" class="dropdown-menu" aria-labelledby="dropdownMenu1">
+						  
+						  </ul>
+						</div>
+						<div class="dropdown">
+						  <button class="btn btn-default dropdown-toggle a-dropdown" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						    Albums
+						    <span class="caret"></span>
+						  </button>
+							<ul id="albums" class="dropdown-menu" aria-labelledby="dropdownMenu1">
+						  
+						  </ul>
+						</div>
 					<!--
 						<label class="displayblock">Song length:<input type="range" name="song-length" class="displayblock center"></label>
 						<label class="displayblock">Artist:<select name="artist" class="displayblock center">

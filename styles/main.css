@@ -75,6 +75,21 @@ nav {
 #artists a, #albums a {
   color: tomato; }
 
+.a-dropdown {
+  background: white;
+  color: tomato;
+  border: 1px solid tomato;
+  font-size: 1em;
+  outline-color: tomato;
+  border-radius: 0;
+  margin-bottom: 1em; }
+
+.a-dropdown:focus, .a-dropdown:hover {
+  background: tomato;
+  color: white;
+  border: 1px solid white;
+  outline-color: white; }
+
 #genre-title {
   margin: .5em; }
 
