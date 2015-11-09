@@ -68,6 +68,13 @@ nav {
   background: pink;
   text-align: center; }
 
+#artists, #albums {
+  list-style-type: none;
+  color: tomato; }
+
+#artists a, #albums a {
+  color: tomato; }
+
 #genre-title {
   margin: .5em; }
 

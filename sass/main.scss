@@ -120,6 +120,15 @@ nav {
 	text-align: center;
 }
 
+#artists, #albums {
+	list-style-type: none;
+	color: $accent-color;
+}
+
+#artists a, #albums a {
+	color: $accent-color;
+}
+
 #genre-title {
 	margin: .5em;
 }

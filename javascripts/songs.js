@@ -24,8 +24,32 @@ function handlebarsToDOM(songList) {
 	});
 }
 
+// artist dropdown
+function artistDropdown(songList) {
+	require(['hbs!../templates/artist'], function (artistTemplate) {
+		$("#artists").append(artistTemplate(songList));
+	});
+}
+
+// album dropdown
+function albumDropdown(songList) {
+	require(['hbs!../templates/album'], function (albumTemplate) {
+		$("#albums").append(albumTemplate(songList));
+	});
+}
+
+
+// writes artist dropdown to page
+populateSongs.writeFirstSongs(artistDropdown);
+getMoreSongs.writeMoreSongs(artistDropdown);
+
+// writes album dropdown to page
+populateSongs.writeFirstSongs(albumDropdown);
+getMoreSongs.writeMoreSongs(albumDropdown);
+
 // writes songs to page from songs.json
 populateSongs.writeFirstSongs(handlebarsToDOM);
+
 
 
 // when you click on More it will add more songs from get-more-songs.js
