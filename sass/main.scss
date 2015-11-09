@@ -192,14 +192,24 @@ label {
 	margin-bottom: .125em;
 }
 
+.larger-margin {
+	display: block;
+	margin: 0 auto .5em;
+}
+
+.larger-margin input[type=checkbox] {
+	margin-right: .25em;
+	vertical-align: top;
+}
+
 .smaller-margin input[type=checkbox] {
 	margin-right: .25em;
 	vertical-align: top;
 }
 
-#song-options-div label:last-child {
-	margin-bottom: .5em;
-}
+// label:last-child {
+// 	margin-bottom: .5em;
+// }
 
 .displayblock {
 	display: block;

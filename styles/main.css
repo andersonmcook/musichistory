@@ -126,12 +126,17 @@ label {
   margin-top: 0;
   margin-bottom: .125em; }
 
-.smaller-margin input[type=checkbox] {
+.larger-margin {
+  display: block;
+  margin: 0 auto .5em; }
+
+.larger-margin input[type=checkbox] {
   margin-right: .25em;
   vertical-align: top; }
 
-#song-options-div label:last-child {
-  margin-bottom: .5em; }
+.smaller-margin input[type=checkbox] {
+  margin-right: .25em;
+  vertical-align: top; }
 
 .displayblock {
   display: block; }
