@@ -51,12 +51,12 @@ populateSongs.writeFirstSongs(albumDropdown);
 populateSongs.writeFirstSongs(handlebarsToDOM);
 
 
-
-// when you click on More it will add more songs from get-more-songs.js
-dom.results.on("click", ".more", function () {
-	$(".more").remove();
-	getMoreSongs.writeMoreSongs(handlebarsToDOM);
-});
+// deprecated
+// // when you click on More it will add more songs from get-more-songs.js
+// dom.results.on("click", ".more", function () {
+// 	$(".more").remove();
+// 	getMoreSongs.writeMoreSongs(handlebarsToDOM);
+// });
 
 // click on the delete button to delete its parent element which is the song
 dom.results.on("click", ".delete", function () {

@@ -1,3 +1,5 @@
+//deprecated
+
 define(["jquery"], function($) {
   return {
     writeMoreSongs: function(callback) {
