@@ -1,6 +1,6 @@
 define(
-  	["jquery", "populate-songs", "get-more-songs", "write-to-results", "dom", "add-to-results"], 
-  function($, populateSongs, getMoreSongs, writeToResults, dom, addToResults) {
+  	["jquery", "populate-songs", "get-more-songs", "write-to-results", "dom", "add-to-results", "add-song"], 
+  function($, populateSongs, getMoreSongs, writeToResults, dom, addToResults, addSong) {
 
 // click view music and it hides addMusic and fades in results and options
 dom.viewMusicLink.click(function () {
@@ -63,19 +63,21 @@ dom.results.on("click", ".delete", function () {
 	$(this).parent(".song-result").remove();
 });
 
-// function to add songs from add form
-var addSongs =  function (event) {
-	if (event.which === 13 || event.which === 1) {
+// // function to add songs from add form
+// var addSongs =  function (event) {
+// 	if (event.which === 13 || event.which === 1) {
 
-		require(['hbs!../templates/addsong'], function (addsongTemplate) {
-				$("#results").prepend(addsongTemplate(addToResults.addToResults()));
-			});
-	}
-};
+// 		require(['hbs!../templates/addsong'], function (addsongTemplate) {
+// 				$("#results").prepend(addsongTemplate(addToResults.addToResults()));
+// 			});
+// 	}
+// };
 
-// adds song if conditions are met and user clicks button or presses enter
-dom.formAddButton.click(addSongs);
-dom.addInputFields.keydown(addSongs);
+// // adds song if conditions are met and user clicks button or presses enter
+// dom.formAddButton.click(addSongs);
+// dom.addInputFields.keydown(addSongs);
+
+addSong.addSong();
 
 }); //end of jQuery
 
