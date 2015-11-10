@@ -46,7 +46,6 @@ function albumDropdown(songList) {
 	});
 }
 
-
 // writes artist dropdown to page
 populateSongs.writeFirstSongs(artistDropdown);
 // getMoreSongs.writeMoreSongs(artistDropdown);
@@ -58,14 +57,6 @@ populateSongs.writeFirstSongs(albumDropdown);
 // writes songs to page from songs.json
 populateSongs.writeFirstSongs(handlebarsToDOM);
 
-
-// deprecated
-// // when you click on More it will add more songs from get-more-songs.js
-// dom.results.on("click", ".more", function () {
-// 	$(".more").remove();
-// 	getMoreSongs.writeMoreSongs(handlebarsToDOM);
-// });
-
 // click on the delete button to delete its parent element which is the song
 dom.results.on("click", ".delete", function () {
 	$(this).parent(".song-result").remove();
@@ -73,17 +64,15 @@ dom.results.on("click", ".delete", function () {
 
 // click on artist to filter only that artist
 dom.artists.on("click", "a", function (event) {
-// keep this line for now, maybe get rid of it when you have multiple songs per artist
 	$('.song-result').show();
-	console.log("test", $(event.target).text());
+	$(event.target).parents().siblings(".dropdown-toggle").html($(event.target).text() + '<span class="caret"></span>');
 	$('.song-result').not(':contains("' + $(event.target).text() +'")').hide();
 });
 
 // click on album to filter only that artist
 dom.albums.on("click", "a", function (event) {
-// keep this line for now, maybe get rid of it when you have multiple songs per album
 	$('.song-result').show();
-	console.log("test", $(event.target).text());
+	$(event.target).parents().siblings(".dropdown-toggle").html($(event.target).text() + '<span class="caret"></span>');
 	$('.song-result').not(':contains("' + $(event.target).text() +'")').hide();
 });
 
@@ -93,27 +82,7 @@ dom.clearFilterButton.click(function () {
 	$('.song-result').show();
 });
 
-// event.target.text()
-
-// if (dom.artists.text() !== dom.results.text()) {
-// 	$(this).parent().hide();
-// }
-
-
-// // function to add songs from add form
-// var addSongs =  function (event) {
-// 	if (event.which === 13 || event.which === 1) {
-
-// 		require(['hbs!../templates/addsong'], function (addsongTemplate) {
-// 				$("#results").prepend(addsongTemplate(addToResults.addToResults()));
-// 			});
-// 	}
-// };
-
-// // adds song if conditions are met and user clicks button or presses enter
-// dom.formAddButton.click(addSongs);
-// dom.addInputFields.keydown(addSongs);
-
+// add song function from add-song.js
 addSong.addSong();
 
 }); //end of jQuery
