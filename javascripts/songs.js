@@ -111,6 +111,7 @@ dom.clearFilterButton.click(function () {
 	$("#artists").siblings(".dropdown-toggle").html("Artists" + '<span class="caret"></span>');
 	$("#albums").siblings(".dropdown-toggle").html("Albums" + '<span class="caret"></span>');
 	$('.song-result').show();
+	dom.clearFilterButton.blur();
 });
 
 // add song function from add-song.js
