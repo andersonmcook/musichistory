@@ -98,7 +98,7 @@ nav {
   outline-color: deepskyblue;
   border-radius: 0; }
 
-#filter:hover {
+#clearfilter:hover {
   background: deepskyblue;
   color: white;
   border: 1px solid white;

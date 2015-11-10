@@ -78,7 +78,8 @@ dom.albums.on("click", "a", function (event) {
 
 // click on clear filter to show everything again
 dom.clearFilterButton.click(function () {
-	console.log("something");
+	$("#artists").siblings(".dropdown-toggle").html("Artists" + '<span class="caret"></span>');
+	$("#albums").siblings(".dropdown-toggle").html("Albums" + '<span class="caret"></span>');
 	$('.song-result').show();
 });
 
