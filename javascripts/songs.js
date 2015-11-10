@@ -71,27 +71,28 @@ dom.results.on("click", ".delete", function () {
 	$(this).parent(".song-result").remove();
 });
 
+// click on artist to filter only that artist
 dom.artists.on("click", "a", function (event) {
-
+	// keep this line for now, maybe get rid of it when you have multiple songs per artist
+	$('.song-result').show();
 	console.log("test", $(event.target).text());
-
-	// $(".song-result").not(:contains($(event.target).text())).hide();
-	// $(".song-result"):contains($(event.target).text()).hide();
 	$('.song-result').not(':contains("' + $(event.target).text() +'")').hide();
+});
 
 
+// click on album to filter only that artist
+dom.albums.on("click", "a", function (event) {
 
-	// ($(event.target)).hide();
-	// if ($(event.target).text() !== dom.results.find(".results-artist").text()) {
-	// 	console.log("dom", dom.results.children(".song-result").html());
-	// 	var x = dom.results.find(".results-artist").text();
-	// 	console.log("x", x);
-		// dom.results.find(".results-artist").each(function () {
-		// 	console.log("yo", dom.results.children(".song-result").html());
-		// });
-	// }
+		// keep this line for now, maybe get rid of it when you have multiple songs per album
+	$('.song-result').show();
+	console.log("test", $(event.target).text());
+	$('.song-result').not(':contains("' + $(event.target).text() +'")').hide();
+});
 
-	// console.log("test", $(event.target).text());
+// click on clear filter to show everything again
+dom.clearFilterButton.click(function () {
+	console.log("something");
+	$('.song-result').show();
 });
 
 // event.target.text()

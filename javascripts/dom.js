@@ -17,7 +17,7 @@ define(["jquery"], function($) {
 
 	var addInputFields = $("#add-music").children();
 
-  var clearfilterButton = $("#clearfilter");
+  var clearFilterButton = $("#clearfilter");
   var artists = $("#artists");
   var albums = $("#albums");
 
@@ -34,7 +34,7 @@ define(["jquery"], function($) {
   	artistNameInput: artistNameInput,
   	albumNameInput: albumNameInput,
   	addInputFields: addInputFields,
-    clearfilterButton: clearfilterButton,
+    clearFilterButton: clearFilterButton,
     artists: artists,
     albums: albums
   };
