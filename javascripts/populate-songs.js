@@ -4,7 +4,6 @@ define(["jquery"], function($) {
       $.ajax({
 			  url: "https://blinding-inferno-367.firebaseio.com/.json"
 			}).done(callback);
-
     }
   };
 });

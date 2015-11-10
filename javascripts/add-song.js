@@ -1,4 +1,4 @@
-define(["jquery", "dom"], function($, dom) {
+define(["jquery", "dom", "populate-songs"], function($, dom, populateSongs) {
   return {
 
 		addSong: function () {
@@ -32,12 +32,43 @@ define(["jquery", "dom"], function($, dom) {
 						data: JSON.stringify(newSong)
 					}).done(function (addedSong) {
 						console.log("Your new song is", addedSong);
+
+
+// runs the json file through handlebars template which writes it to the results div
+						function handlebarsToDOM(songList) {
+							require(['hbs!../templates/songs'], function (songTemplate) {
+								$("#results").html(songTemplate(songList));
+							});
+						}
+
+// artist dropdown
+						function artistDropdown(songList) {
+							require(['hbs!../templates/artist'], function (artistTemplate) {
+								$("#artists").html(artistTemplate(songList));
+							});
+						}
+
+// album dropdown
+						function albumDropdown(songList) {
+							require(['hbs!../templates/album'], function (albumTemplate) {
+								$("#albums").html(albumTemplate(songList));
+							});
+						}
+
+// writes artist dropdown to page
+						populateSongs.writeFirstSongs(artistDropdown);
+
+// writes album dropdown to page
+						populateSongs.writeFirstSongs(albumDropdown);
+
+// writes songs to page from songs.json
+						populateSongs.writeFirstSongs(handlebarsToDOM);
+
 // resets add form input values
 						dom.songNameInput.val("");
 						dom.artistNameInput.val("");
 						dom.albumNameInput.val("");					
 					});
-
 
 // hides error message if successfully added
 					dom.errorMessage.hide();

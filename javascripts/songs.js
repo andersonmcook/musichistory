@@ -28,21 +28,21 @@ dom.addMusicLink.click(function () {
 // runs the json file through handlebars template which writes it to the results div
 function handlebarsToDOM(songList) {
 	require(['hbs!../templates/songs'], function (songTemplate) {
-		$("#results").append(songTemplate(songList));
+		$("#results").html(songTemplate(songList));
 	});
 }
 
 // artist dropdown
 function artistDropdown(songList) {
 	require(['hbs!../templates/artist'], function (artistTemplate) {
-		$("#artists").append(artistTemplate(songList));
+		$("#artists").html(artistTemplate(songList));
 	});
 }
 
 // album dropdown
 function albumDropdown(songList) {
 	require(['hbs!../templates/album'], function (albumTemplate) {
-		$("#albums").append(albumTemplate(songList));
+		$("#albums").html(albumTemplate(songList));
 	});
 }
 
@@ -62,12 +62,28 @@ populateSongs.writeFirstSongs(handlebarsToDOM);
 // if the bracket notation of text has been seen in the object before, remove it
 $("body").click(function () {
 		var seen = {};
-			$('a').each(function() {
-		    var txt = $(this).text();
-		    if (seen[txt])
+			$('#artists a').each(function() {
+		    var keyname = $(this).text();
+		    if (seen[keyname])
 		        $(this).remove();
 		    else
-		        seen[txt] = true;
+		        seen[keyname] = true;
+		});
+});
+
+// when anywhere in the body is clicked (need to refine this)
+// creates an object called seen
+// loops through the links on the page (need to refine this, too)
+// sets text to the text of the link
+// if the bracket notation of text has been seen in the object before, remove it
+$("body").click(function () {
+		var seen = {};
+			$('#albums a').each(function() {
+		    var keyname = $(this).text();
+		    if (seen[keyname])
+		        $(this).remove();
+		    else
+		        seen[keyname] = true;
 		});
 });
 
