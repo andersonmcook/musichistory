@@ -48,14 +48,38 @@ function albumDropdown(songList) {
 
 // writes artist dropdown to page
 populateSongs.writeFirstSongs(artistDropdown);
-// getMoreSongs.writeMoreSongs(artistDropdown);
 
 // writes album dropdown to page
 populateSongs.writeFirstSongs(albumDropdown);
-// getMoreSongs.writeMoreSongs(albumDropdown);
 
 // writes songs to page from songs.json
 populateSongs.writeFirstSongs(handlebarsToDOM);
+
+
+
+
+
+// won't work
+
+dom.artists.on("click", "a", function (event) {
+	console.log('test', $(event.target).text() );
+});
+
+// when anywhere in the body is clicked (need to refine this)
+// creates an object called seen
+// loops through the links on the page (need to refine this, too)
+// sets text to the text of the link
+// if the bracket notation of text has been seen in the object before, remove it
+$("body").click(function () {
+		var seen = {};
+			$('a').each(function() {
+		    var txt = $(this).text();
+		    if (seen[txt])
+		        $(this).remove();
+		    else
+		        seen[txt] = true;
+		});
+});
 
 // click on the delete button to delete its parent element which is the song
 dom.results.on("click", ".delete", function () {

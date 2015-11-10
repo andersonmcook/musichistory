@@ -32,12 +32,12 @@ define(["jquery", "dom"], function($, dom) {
 						data: JSON.stringify(newSong)
 					}).done(function (addedSong) {
 						console.log("Your new song is", addedSong);
+// resets add form input values
+						dom.songNameInput.val("");
+						dom.artistNameInput.val("");
+						dom.albumNameInput.val("");					
 					});
 
-// resets add form input values
-					dom.songNameInput.val("");
-					dom.artistNameInput.val("");
-					dom.albumNameInput.val("");
 
 // hides error message if successfully added
 					dom.errorMessage.hide();
