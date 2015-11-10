@@ -55,16 +55,6 @@ populateSongs.writeFirstSongs(albumDropdown);
 // writes songs to page from songs.json
 populateSongs.writeFirstSongs(handlebarsToDOM);
 
-
-
-
-
-// won't work
-
-dom.artists.on("click", "a", function (event) {
-	console.log('test', $(event.target).text() );
-});
-
 // when anywhere in the body is clicked (need to refine this)
 // creates an object called seen
 // loops through the links on the page (need to refine this, too)
