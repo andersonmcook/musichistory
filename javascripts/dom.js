@@ -17,6 +17,10 @@ define(["jquery"], function($) {
 
 	var addInputFields = $("#add-music").children();
 
+  var clearfilterButton = $("#clearfilter");
+  var artists = $("#artists");
+  var albums = $("#albums");
+
   return {
   	songOptions: songOptions,
   	results: results,
@@ -29,6 +33,9 @@ define(["jquery"], function($) {
   	songNameInput: songNameInput,
   	artistNameInput: artistNameInput,
   	albumNameInput: albumNameInput,
-  	addInputFields: addInputFields
+  	addInputFields: addInputFields,
+    clearfilterButton: clearfilterButton,
+    artists: artists,
+    albums: albums
   };
  });

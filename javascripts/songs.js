@@ -1,3 +1,11 @@
+// Use jQuery to retrieve the songs from your API.
+// Use the JSON objects to populate Handlebar templates.
+// Use the populated templates to update the browser.
+// Add new songs to your Firebase API with POST AJAX calls.
+// Populate the form fields with data from your API.
+// When "Filter" button is pressed, update the song list with songs that only match the specified criteria.
+
+
 define(
   	["jquery", "populate-songs", "get-more-songs", "write-to-results", "dom", "add-to-results", "add-song"], 
   function($, populateSongs, getMoreSongs, writeToResults, dom, addToResults, addSong) {
@@ -62,6 +70,36 @@ populateSongs.writeFirstSongs(handlebarsToDOM);
 dom.results.on("click", ".delete", function () {
 	$(this).parent(".song-result").remove();
 });
+
+dom.artists.on("click", "a", function (event) {
+
+	console.log("test", $(event.target).text());
+
+	// $(".song-result").not(:contains($(event.target).text())).hide();
+	// $(".song-result"):contains($(event.target).text()).hide();
+	$('.song-result').not(':contains("' + $(event.target).text() +'")').hide();
+
+
+
+	// ($(event.target)).hide();
+	// if ($(event.target).text() !== dom.results.find(".results-artist").text()) {
+	// 	console.log("dom", dom.results.children(".song-result").html());
+	// 	var x = dom.results.find(".results-artist").text();
+	// 	console.log("x", x);
+		// dom.results.find(".results-artist").each(function () {
+		// 	console.log("yo", dom.results.children(".song-result").html());
+		// });
+	// }
+
+	// console.log("test", $(event.target).text());
+});
+
+// event.target.text()
+
+// if (dom.artists.text() !== dom.results.text()) {
+// 	$(this).parent().hide();
+// }
+
 
 // // function to add songs from add form
 // var addSongs =  function (event) {
