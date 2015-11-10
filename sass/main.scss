@@ -3,6 +3,7 @@ $nav-color: dimgray;
 
 // sets accent color for text and divs
 $accent-color: tomato;
+$alt-color: deepskyblue;
 
 // sets default background color
 $bg-color: whitesmoke;
@@ -146,7 +147,22 @@ nav {
 	outline-color: $body-color;
 }
 
+#clearfilter {
+	background: $body-color;
+	color: $alt-color;
+	border: 1px solid $alt-color;
+	font-size: 1em;
+	outline-color: $alt-color;
+	border-radius: 0;
+}
 
+#filter:hover {
+	background: $alt-color;
+	color: $body-color;
+	border: 1px solid $body-color;
+	font-size: 1em;
+	outline-color: $body-color;
+}
 
 
 #genre-title {

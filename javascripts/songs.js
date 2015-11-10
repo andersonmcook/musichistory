@@ -73,17 +73,15 @@ dom.results.on("click", ".delete", function () {
 
 // click on artist to filter only that artist
 dom.artists.on("click", "a", function (event) {
-	// keep this line for now, maybe get rid of it when you have multiple songs per artist
+// keep this line for now, maybe get rid of it when you have multiple songs per artist
 	$('.song-result').show();
 	console.log("test", $(event.target).text());
 	$('.song-result').not(':contains("' + $(event.target).text() +'")').hide();
 });
 
-
 // click on album to filter only that artist
 dom.albums.on("click", "a", function (event) {
-
-		// keep this line for now, maybe get rid of it when you have multiple songs per album
+// keep this line for now, maybe get rid of it when you have multiple songs per album
 	$('.song-result').show();
 	console.log("test", $(event.target).text());
 	$('.song-result').not(':contains("' + $(event.target).text() +'")').hide();
