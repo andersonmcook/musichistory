@@ -84,11 +84,11 @@ nav {
   border-radius: 0;
   margin-bottom: 1em; }
 
-.a-dropdown:focus, .a-dropdown:hover {
-  background: tomato;
-  color: white;
-  border: 1px solid white;
-  outline-color: white; }
+.a-dropdown:hover, .a-dropdown:focus {
+  background: tomato !important;
+  color: white !important;
+  border: 1px solid white !important;
+  outline-color: white !important; }
 
 #clearfilter {
   background: white;
