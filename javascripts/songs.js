@@ -7,8 +7,8 @@
 
 
 define(
-  	["jquery", "populate-songs", "get-more-songs", "write-to-results", "dom", "add-to-results", "add-song", "writer", "delete"], 
-  function($, populateSongs, getMoreSongs, writeToResults, dom, addToResults, addSong, writer, deleteSong) {
+  	["jquery", "populate-songs", "get-more-songs", "write-to-results", "dom", "add-to-results", "add-song", "writer", "delete", "filter"], 
+  function($, populateSongs, getMoreSongs, writeToResults, dom, addToResults, addSong, writer, deleteSong, filter) {
 
 // click view music and it hides addMusic and fades in results and options
 dom.viewMusicLink.click(function () {
@@ -71,34 +71,9 @@ dom.results.on("click", ".delete", function () {
 	$(this).parent(".song-result").remove();
 });
 
-// click on artist to filter only that artist
-dom.artists.on("click", "a", function (event) {
-	$('.song-result').show();
-	dom.artists.children().show();
-	dom.albums.children().show();
-	$("#albums").siblings(".dropdown-toggle").html("Albums" + '<span class="caret"></span>');
-	$('.song-result').show();
-	$(event.target).parents().siblings(".dropdown-toggle").html($(event.target).text() + '<span class="caret"></span>');
-	$('.song-result').not(':contains("' + $(event.target).text() +'")').toggle();
-	dom.albums.children("li").not(':contains("' + $(event.target).text() +'")').toggle();
-});
 
-// click on album to filter only that artist
-dom.albums.on("click", "a", function (event) {
-	$('.song-result').show();
-	$(event.target).parents().siblings(".dropdown-toggle").html($(event.target).text() + '<span class="caret"></span>');
-	$('.song-result').not(':contains("' + $(event.target).text() +'")').toggle();
-});
-
-// click on clear filter to show everything again
-dom.clearFilterButton.click(function () {
-	$("#artists").siblings(".dropdown-toggle").html("Artists" + '<span class="caret"></span>');
-	$("#albums").siblings(".dropdown-toggle").html("Albums" + '<span class="caret"></span>');
-	$('.song-result').show();
-	dom.artists.children().show();
-	dom.albums.children().show();
-	dom.clearFilterButton.blur();
-});
+// add filter functionality from filter.js
+filter.filter();
 
 // add song function from add-song.js
 addSong.addSong();
