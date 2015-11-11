@@ -25,27 +25,6 @@ dom.addMusicLink.click(function () {
 	dom.songNameInput.focus();
 });
 
-// // runs the json file through handlebars template which writes it to the results div
-// function handlebarsToDOM(songList) {
-// 	require(['hbs!../templates/songs'], function (songTemplate) {
-// 		$("#results").html(songTemplate(songList));
-// 	});
-// }
-
-// // artist dropdown
-// function artistDropdown(songList) {
-// 	require(['hbs!../templates/artist'], function (artistTemplate) {
-// 		$("#artists").html(artistTemplate(songList));
-// 	});
-// }
-
-// // album dropdown
-// function albumDropdown(songList) {
-// 	require(['hbs!../templates/album'], function (albumTemplate) {
-// 		$("#albums").html(albumTemplate(songList));
-// 	});
-// }
-
 // writes artist dropdown to page
 populateSongs.writeFirstSongs(writer.artistDropdown);
 
