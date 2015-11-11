@@ -66,10 +66,10 @@ $("body").click(function () {
 		});
 });
 
-// click on the delete button to delete its parent element which is the song
-dom.results.on("click", ".delete", function () {
-	$(this).parent(".song-result").remove();
-});
+// // click on the delete button to delete its parent element which is the song
+// dom.results.on("click", ".delete", function () {
+// 	$(this).parent(".song-result").remove();
+// });
 
 
 // add filter functionality from filter.js
