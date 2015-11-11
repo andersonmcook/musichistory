@@ -7,8 +7,8 @@
 
 
 define(
-  	["jquery", "populate-songs", "get-more-songs", "write-to-results", "dom", "add-to-results", "add-song", "writer"], 
-  function($, populateSongs, getMoreSongs, writeToResults, dom, addToResults, addSong, writer) {
+  	["jquery", "populate-songs", "get-more-songs", "write-to-results", "dom", "add-to-results", "add-song", "writer", "delete"], 
+  function($, populateSongs, getMoreSongs, writeToResults, dom, addToResults, addSong, writer, deleteSong) {
 
 // click view music and it hides addMusic and fades in results and options
 dom.viewMusicLink.click(function () {
@@ -74,15 +74,20 @@ dom.results.on("click", ".delete", function () {
 // click on artist to filter only that artist
 dom.artists.on("click", "a", function (event) {
 	$('.song-result').show();
+	dom.artists.children().show();
+	dom.albums.children().show();
+	$("#albums").siblings(".dropdown-toggle").html("Albums" + '<span class="caret"></span>');
+	$('.song-result').show();
 	$(event.target).parents().siblings(".dropdown-toggle").html($(event.target).text() + '<span class="caret"></span>');
-	$('.song-result').not(':contains("' + $(event.target).text() +'")').hide();
+	$('.song-result').not(':contains("' + $(event.target).text() +'")').toggle();
+	dom.albums.children("li").not(':contains("' + $(event.target).text() +'")').toggle();
 });
 
 // click on album to filter only that artist
 dom.albums.on("click", "a", function (event) {
 	$('.song-result').show();
 	$(event.target).parents().siblings(".dropdown-toggle").html($(event.target).text() + '<span class="caret"></span>');
-	$('.song-result').not(':contains("' + $(event.target).text() +'")').hide();
+	$('.song-result').not(':contains("' + $(event.target).text() +'")').toggle();
 });
 
 // click on clear filter to show everything again
@@ -90,19 +95,28 @@ dom.clearFilterButton.click(function () {
 	$("#artists").siblings(".dropdown-toggle").html("Artists" + '<span class="caret"></span>');
 	$("#albums").siblings(".dropdown-toggle").html("Albums" + '<span class="caret"></span>');
 	$('.song-result').show();
+	dom.artists.children().show();
+	dom.albums.children().show();
 	dom.clearFilterButton.blur();
 });
 
 // add song function from add-song.js
 addSong.addSong();
 
+// delete song from delete.js
+// deleteSong.deleteSong();
+
 }); //end of jQuery
 
 
 
 
-
-
+// lodash
+// var matchingAlbums = _.chain(config.originalSongsArray)
+//                       .filter((song) => song.artist === selectedArtist)
+//                       .uniq('album.name')
+//                       .pluck('album')
+//                       .value();
 
 
 
