@@ -1,4 +1,4 @@
-define(["jquery", "dom", "populate-songs"], function($, dom, populateSongs) {
+define(["jquery", "dom", "populate-songs", "writer"], function($, dom, populateSongs, writer) {
   return {
 
 		addSong: function () {
