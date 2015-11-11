@@ -13,6 +13,7 @@
     "tests"
   ],
   "dependencies": {
+    "lodash": "~3.10.1",
     "require-handlebars-plugin": "~1.0.0"
   }
 }
