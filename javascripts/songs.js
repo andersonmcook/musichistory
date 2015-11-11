@@ -79,7 +79,7 @@ filter.filter();
 addSong.addSong();
 
 // delete song from delete.js
-// deleteSong.deleteSong();
+deleteSong.deleteSong();
 
 }); //end of jQuery
 
