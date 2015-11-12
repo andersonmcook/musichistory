@@ -45,45 +45,31 @@ dom.addMusicLink.click(function () {
 	dom.songNameInput.focus();
 });
 
-// // writes artist dropdown to page
-// populateSongs.writeFirstSongs(writer.artistDropdown);
-
-// // writes album dropdown to page
-// populateSongs.writeFirstSongs(writer.albumDropdown);
-
-// // writes songs to page from songs.json
-// // populateSongs.writeFirstSongs(writer.handlebarsToDOM);
-
 // when anywhere in the body is clicked (need to refine this)
 // creates an object called seen
-// loops through the links on the page (need to refine this, too)
+// loops through the links in the respective dropdowns
 // sets text to the text of the link
-// if the bracket notation of text has been seen in the object before, remove it
+// if the bracket notation of text has been seen in the object before (been set to true), remove it
+// if not, set it to true
 $("body").click(function () {
-		var seen = {};
+		var artistSeen = {};
 			$('#artists a').each(function() {
 		    var keyname = $(this).text();
-		    if (seen[keyname])
+		    if (artistSeen[keyname] === true)
 		        $(this).remove();
 		    else
-		        seen[keyname] = true;
+		        artistSeen[keyname] = true;
 		});
-});
 
-// when anywhere in the body is clicked (need to refine this)
-// creates an object called seen
-// loops through the links on the page (need to refine this, too)
-// sets text to the text of the link
-// if the bracket notation of text has been seen in the object before, remove it
-$("body").click(function () {
-		var seen = {};
+		var albumSeen = {};
 			$('#albums a').each(function() {
 		    var keyname = $(this).text();
-		    if (seen[keyname])
+		    if (albumSeen[keyname] === true)
 		        $(this).remove();
 		    else
-		        seen[keyname] = true;
+		        albumSeen[keyname] = true;
 		});
+
 });
 
 // add filter functionality from filter.js
