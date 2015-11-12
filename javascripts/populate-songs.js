@@ -6,15 +6,5 @@ define(["jquery"], function($) {
 			  method: "GET"
 			}).done(callback);
     }
-    // ,
-
-    // dataFromSongs: function() {
-    // 	$.ajax({
-    // 		url: "https://blinding-inferno-367.firebaseio/.json",
-    // 		method: "GET"
-    // 	}).done();
-    // }
-
-
   };
 });

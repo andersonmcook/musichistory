@@ -10,6 +10,26 @@ define(
   	["jquery", "populate-songs", "get-more-songs", "write-to-results", "dom", "add-to-results", "add-song", "writer", "delete", "filter"], 
   function($, populateSongs, getMoreSongs, writeToResults, dom, addToResults, addSong, writer, deleteSong, filter) {
 
+// Create a reference to your Firebase database
+var myFirebaseRef = new Firebase("https://blinding-inferno-367.firebaseio.com/");
+
+// Listen for when anything changes on the "songs" key
+myFirebaseRef.child("songs").on("value", function(snapshot) {
+
+// Store the entire songs key in a local variable
+  var allSongsObject = snapshot.val();
+
+// Bind the allSongsObject to the song list Handlebar template
+// use {songs:} because handlebars expects an object of songs
+  writer.handlebarsToDOM({songs:allSongsObject});
+
+// Bind the unique artists to the artists template
+	writer.artistDropdown({songs:allSongsObject});
+
+// Bind the unique albums to the albums template
+	writer.albumDropdown({songs:allSongsObject});
+});
+
 // click view music and it hides addMusic and fades in results and options
 dom.viewMusicLink.click(function () {
 	dom.addMusic.hide();
@@ -25,14 +45,14 @@ dom.addMusicLink.click(function () {
 	dom.songNameInput.focus();
 });
 
-// writes artist dropdown to page
-populateSongs.writeFirstSongs(writer.artistDropdown);
+// // writes artist dropdown to page
+// populateSongs.writeFirstSongs(writer.artistDropdown);
 
-// writes album dropdown to page
-populateSongs.writeFirstSongs(writer.albumDropdown);
+// // writes album dropdown to page
+// populateSongs.writeFirstSongs(writer.albumDropdown);
 
-// writes songs to page from songs.json
-populateSongs.writeFirstSongs(writer.handlebarsToDOM);
+// // writes songs to page from songs.json
+// // populateSongs.writeFirstSongs(writer.handlebarsToDOM);
 
 // when anywhere in the body is clicked (need to refine this)
 // creates an object called seen
@@ -65,12 +85,6 @@ $("body").click(function () {
 		        seen[keyname] = true;
 		});
 });
-
-// // click on the delete button to delete its parent element which is the song
-// dom.results.on("click", ".delete", function () {
-// 	$(this).parent(".song-result").remove();
-// });
-
 
 // add filter functionality from filter.js
 filter.filter();

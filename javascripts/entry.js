@@ -5,16 +5,19 @@ requirejs.config({
     "hbs": "../lib/bower_components/require-handlebars-plugin/hbs",
     "bootstrap": "../lib/bower_components/bootstrap/dist/js/bootstrap.min",
     "lodash": "../lib/bower_components/lodash/lodash.min",
-    "firebase": "https://cdn.firebase.com/js/client/2.2.1/firebase"
+    "firebase": "../lib/bower_components/firebase/firebase"
   },
   shim: {
-  	"bootstrap": ["jquery"]
+  	"bootstrap": ["jquery"],
+    "firebase": {
+      exports: "Firebase"
+    }
   }
 });
 
 require(
-  ["jquery", "bootstrap", "songs", "hbs"], 
-  function($, bootstrap, songs, Handlebars) {
+  ["jquery", "bootstrap", "songs", "hbs", "firebase"], 
+  function($, bootstrap, songs, Handlebars, fb) {
 
   }
 );
