@@ -51,6 +51,7 @@ define(["jquery", "dom", "populate-songs", "writer"], function($, dom, populateS
 // hides error message if successfully added
 					dom.errorMessage.hide();
 				} else {
+					
 // shows error message
 						dom.errorMessage.html("Add a song, artist, and album");
 						dom.errorMessage.show();
