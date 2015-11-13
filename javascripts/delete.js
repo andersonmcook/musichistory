@@ -1,3 +1,6 @@
+// When you add, or delete, a song, the modules that perform the XHRs should return promises.
+// After the promise is resolved, you should display a Bootstrap modal window to provide feedback on if the operation was successful, or not.
+
 define(
   ["jquery","dom", "writer", "firebase"], function($, dom, writer, firebase) {
   	return {
