@@ -151,6 +151,10 @@ nav {
 
 
 /**************************************** MODALS ****************************************/
+.modal {
+	top: 40%;
+}
+
 .modal-header {
 	background: $body-color;
 	color: $nav-color;
@@ -160,6 +164,10 @@ nav {
 
 .modal-dialog {
 	width: 400px;
+}
+
+.modal-backdrop {
+    opacity:0.25 !important;
 }
 
 #clearfilter {

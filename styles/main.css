@@ -91,6 +91,9 @@ nav {
   outline-color: white !important; }
 
 /**************************************** MODALS ****************************************/
+.modal {
+  top: 40%; }
+
 .modal-header {
   background: white;
   color: dimgray;
@@ -99,6 +102,9 @@ nav {
 
 .modal-dialog {
   width: 400px; }
+
+.modal-backdrop {
+  opacity: 0.25 !important; }
 
 #clearfilter {
   background: white;
