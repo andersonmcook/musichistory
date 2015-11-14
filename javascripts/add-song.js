@@ -1,4 +1,4 @@
-define(["jquery", "dom", "populate-songs", "writer", "add-promise"], function($, dom, populateSongs, writer, addPromise) {
+define(["jquery", "dom", "add-promise"], function($, dom, addPromise) {
   return {
 
 		addSong: function () {
@@ -25,30 +25,18 @@ define(["jquery", "dom", "populate-songs", "writer", "add-promise"], function($,
 						"album": dom.albumNameInput.val()
 					};
 
-// POSTs to firebase with promise
+// POSTs to firebase with promise. addPromise also contains modal pop ups
 					addPromise(newSong).then(function () {
-
-
-// now we need to add a modal pop up
-
-
-// writes artist dropdown to page
-						populateSongs.writeFirstSongs(writer.artistDropdown);
-
-// writes album dropdown to page
-						populateSongs.writeFirstSongs(writer.albumDropdown);
-
-// writes songs to page from songs.json
-						populateSongs.writeFirstSongs(writer.handlebarsToDOM);
 
 // resets add form input values
 						dom.songNameInput.val("");
 						dom.artistNameInput.val("");
-						dom.albumNameInput.val("");					
-					});
+						dom.albumNameInput.val("");			
 
 // hides error message if successfully added
-					dom.errorMessage.hide();
+						dom.errorMessage.hide();
+					});
+
 				} else {
 					
 // shows error message

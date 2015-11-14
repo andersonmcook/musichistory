@@ -95,5 +95,54 @@ deleteSong.deleteSong();
 
 
 
+define(["app", "populate-songs", "q", "main"], function(app, populatesongs, Q, main) {
+          
+    // var userAddedSong = {};
 
+    function addBookToLibrary(newSong) {
+        var deferred = Q.defer();
+
+        $.ajax({
+            url: "https://glaring-torch-1219.firebaseio.com/songs.json",
+            method: "POST",
+            data: JSON.stringify(newSong)              
+        })
+        .done(function(newSong) {
+            deferred.resolve(newSong);
+            console.log("newSong", newSong);
+            // Per main.js, any changes to API auto-populate.
+        })
+        .fail(function(error) {
+            deferred.reject(error); 
+        });
+        return deferred.promise;
+    }
+
+    $("#add-music-button").click(function(e) {
+
+        // Takes user information and prepares object for Firebase
+        var userAddedSong = {
+            "title": $("#added-song").val(),
+            "artist": $("#added-artist").val(),
+            "album": $("#added-album").val()
+        };
+
+        // console.log("newSong", newSong);
+        addBookToLibrary(userAddedSong) // sends userAddedSong to AJAX call, inputs to argument newSong
+            .then()
+            .fail(function(error) {
+                console.log("error", error);
+            });
+
+        // Clears input fields once change to Firebase is made.
+        $("#added-song").val("");
+        $("#added-artist").val("");
+        $("#added-album").val("");
+
+    }); // closes click listener function
+
+
+
+
+});
 
