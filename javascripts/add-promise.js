@@ -1,4 +1,4 @@
-define(["q", "jquery"], function(Q, $) {
+define(["q", "jquery", "bootstrap"], function(Q, $) {
   return function(newSong) {
     var deferred = Q.defer();
 
@@ -11,6 +11,7 @@ define(["q", "jquery"], function(Q, $) {
         // Now we can resolve the promise and send the data
         deferred.resolve(json_data);
         console.log("books json_data", json_data);
+        $('#myModal').modal('show');
       })
       // XHR failed for some reason
       .fail(function(xhr, status, error) {

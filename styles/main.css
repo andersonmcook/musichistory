@@ -90,6 +90,16 @@ nav {
   border: 1px solid white !important;
   outline-color: white !important; }
 
+/**************************************** MODALS ****************************************/
+.modal-header {
+  background: white;
+  color: dimgray;
+  border-radius: 0;
+  font-size: .75em; }
+
+.modal-dialog {
+  width: 300px; }
+
 #clearfilter {
   background: white;
   color: deepskyblue;

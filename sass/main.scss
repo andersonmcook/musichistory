@@ -149,12 +149,18 @@ nav {
 	outline-color: $body-color !important;
 }
 
-// .open .btn-default:hover, .open .btn-default:focus {
-// 	background: $accent-color !important;
-// 	color: $body-color !important;
-// 	border: 1px solid $body-color !important;
-// 	outline-color: $body-color !important;
-// }
+
+/**************************************** MODALS ****************************************/
+.modal-header {
+	background: $body-color;
+	color: $nav-color;
+	border-radius: 0;
+	font-size: .75em;
+}
+
+.modal-dialog {
+	width: 300px;
+}
 
 #clearfilter {
 	background: $body-color;
