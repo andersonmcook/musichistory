@@ -1,8 +1,10 @@
 define(["q", "jquery"], function(Q, $) {
-  return function() {
+  return function(songToDelete) {
     var deferred = Q.defer();
 
-    $.ajax({ url: "https://blinding-inferno-367.firebaseio.com/songs.json" })
+    $.ajax({ url: "https://blinding-inferno-367.firebaseio.com/songs/" + songToDelete + "/.json",
+        method: "DELETE",
+        data: JSON.stringify(songToDelete) })
       // XHR was successful
       .done(function(json_data) {
         // Now we can resolve the promise and send the data
@@ -13,6 +15,7 @@ define(["q", "jquery"], function(Q, $) {
         // Since the call failed, we have to reject the promise
         deferred.reject(error);
         console.log("error", error);
+        $("#delete-failure").modal('show');
       });
 
     return deferred.promise;

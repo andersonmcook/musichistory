@@ -27,7 +27,7 @@ define(["jquery", "dom", "add-promise"], function($, dom, addPromise) {
 
 // POSTs to firebase with promise. addPromise also contains modal pop ups
 					addPromise(newSong).then(function () {
-
+						$('#add-success').modal('show');
 // resets add form input values
 						dom.songNameInput.val("");
 						dom.artistNameInput.val("");
