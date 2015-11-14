@@ -1,8 +1,11 @@
 define(["q", "jquery"], function(Q, $) {
-  return function() {
+  return function(newSong) {
     var deferred = Q.defer();
 
-    $.ajax({ url: "https://blinding-inferno-367.firebaseio.com/songs.json" })
+    $.ajax({ url: "https://blinding-inferno-367.firebaseio.com/songs.json",
+      method: "POST",
+      data: JSON.stringify(newSong)
+    })
       // XHR was successful
       .done(function(json_data) {
         // Now we can resolve the promise and send the data

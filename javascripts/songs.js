@@ -7,8 +7,8 @@
 
 
 define(
-  	["jquery", "populate-songs", "get-more-songs", "write-to-results", "dom", "add-to-results", "add-song", "writer", "delete", "filter"], 
-  function($, populateSongs, getMoreSongs, writeToResults, dom, addToResults, addSong, writer, deleteSong, filter) {
+  	["jquery", "populate-songs", "get-more-songs", "write-to-results", "dom", "add-to-results", "add-song", "writer", "delete", "filter", "add-promise", "delete-promise"], 
+  function($, populateSongs, getMoreSongs, writeToResults, dom, addToResults, addSong, writer, deleteSong, filter, addPromise, deletePromise) {
 
 // Create a reference to your Firebase database
 var myFirebaseRef = new Firebase("https://blinding-inferno-367.firebaseio.com/");

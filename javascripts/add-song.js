@@ -1,4 +1,4 @@
-define(["jquery", "dom", "populate-songs", "writer"], function($, dom, populateSongs, writer) {
+define(["jquery", "dom", "populate-songs", "writer", "add-promise"], function($, dom, populateSongs, writer, addPromise) {
   return {
 
 		addSong: function () {
@@ -25,13 +25,12 @@ define(["jquery", "dom", "populate-songs", "writer"], function($, dom, populateS
 						"album": dom.albumNameInput.val()
 					};
 
-// POSTs to firebase
-					$.ajax({
-						url: "https://blinding-inferno-367.firebaseio.com/songs.json",
-						method: "POST",
-						data: JSON.stringify(newSong)
-					}).done(function (addedSong) {
-						console.log("Your new song is", addedSong);
+// POSTs to firebase with promise
+					addPromise(newSong).then(function () {
+
+
+// now we need to add a modal pop up
+
 
 // writes artist dropdown to page
 						populateSongs.writeFirstSongs(writer.artistDropdown);
