@@ -20,6 +20,7 @@ myFirebaseRef.child("songs").on("value", function(snapshot) {
 
 // Bind the unique albums to the albums template
 	writer.albumDropdown({songs:allSongsObject});
+
 });
 
 // click view music and it hides addMusic and fades in results and options
