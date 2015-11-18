@@ -1,6 +1,6 @@
 define(
-  	["jquery", "dom", "add-song", "writer", "delete", "filter", "add-promise", "delete-promise"], 
-  function($, dom, addSong, writer, deleteSong, filter, addPromise, deletePromise) {
+  	["jquery", "lodash", "dom", "add-song", "writer", "delete", "filter", "add-promise", "delete-promise"], 
+  function($, _, dom, addSong, writer, deleteSong, filter, addPromise, deletePromise) {
 
 // Create a reference to your Firebase database
 var myFirebaseRef = new Firebase("https://blinding-inferno-367.firebaseio.com/");
@@ -10,6 +10,16 @@ myFirebaseRef.child("songs").on("value", function(snapshot) {
 
 // Store the entire songs key in a local variable
   var allSongsObject = snapshot.val();
+
+
+
+	// var matchingAlbums = _.chain(allSongsObject)
+	//                       .filter((song) => song.artist === selectedArtist)
+	//                       .uniq('album.name')
+	//                       .pluck('album')
+	//                       .value();
+	// console.log("matchAlbums", matchingAlbums);
+
 
 // Bind the allSongsObject to the song list Handlebar template
 // use {songs:} because handlebars expects an object of songs
@@ -65,8 +75,9 @@ $("body").click(function () {
 
 });
 
+
 // add filter functionality from filter.js
-filter.filter();
+// filter.filter();
 
 // add song function from add-song.js
 addSong.addSong();
@@ -80,8 +91,3 @@ deleteSong.deleteSong();
 
 
 // lodash
-// var matchingAlbums = _.chain(config.originalSongsArray)
-//                       .filter((song) => song.artist === selectedArtist)
-//                       .uniq('album.name')
-//                       .pluck('album')
-//                       .value();
