@@ -47,6 +47,11 @@ app.controller("SongsLogic", ["$q", "$http", "$scope", function($q, $http, $scop
   });
 // }]);
 
+// remove song on click
+	$("body").on("click", ".delete", function () {
+		$(this).parent(".song-result").remove();
+	});
+
 // $(document).ready(function() {
 
 	var songOptions = $("#song-options-div");
@@ -89,24 +94,24 @@ app.controller("SongsLogic", ["$q", "$http", "$scope", function($q, $http, $scop
 	}
 	};
 
-	var writeToResults = function (songList) {
-		for (var i = 0; i < songList.songs.length; i++) {
-			var currentSong = songList.songs[i];
-			var results1 = "<div class='song-result'><p class='song-name'>" + currentSong.title + "</p>";
-			var results2 = "<span class='results-line results-artist'>" + currentSong.artist + "</span>";
-			var results3 = "<span class='results-line results-divider'>" + "|" + "</span>";
-			var results4 = "<span class='results-line results-album'>" + currentSong.album + "</span>";
-			var deleteButton = "<button class='delete'>Delete</button></div>";
-			results.append(results1 + results2 + results3 + results4 + deleteButton);	
-		}
-		var deleteSongButton = $(".delete");
-		var deleteSong = function () {
-			$(this).parent(".song-result").remove();
-		};	
-		deleteSongButton.click(deleteSong);
-		var moreButton = "<button class='more'>More</button>";
-		results.append(moreButton);
-	};
+	// var writeToResults = function (songList) {
+	// 	for (var i = 0; i < songList.songs.length; i++) {
+	// 		var currentSong = songList.songs[i];
+	// 		var results1 = "<div class='song-result'><p class='song-name'>" + currentSong.title + "</p>";
+	// 		var results2 = "<span class='results-line results-artist'>" + currentSong.artist + "</span>";
+	// 		var results3 = "<span class='results-line results-divider'>" + "|" + "</span>";
+	// 		var results4 = "<span class='results-line results-album'>" + currentSong.album + "</span>";
+	// 		var deleteButton = "<button class='delete'>Delete</button></div>";
+	// 		results.append(results1 + results2 + results3 + results4 + deleteButton);	
+	// 	}
+	// 	var deleteSongButton = $(".delete");
+	// 	var deleteSong = function () {
+	// 		$(this).parent(".song-result").remove();
+	// 	};	
+	// 	deleteSongButton.click(deleteSong);
+	// 	var moreButton = "<button class='more'>More</button>";
+	// 	results.append(moreButton);
+	// };
 
 	// var moreButton = "<button class='more'>More</button>";
 
@@ -160,7 +165,10 @@ app.controller("SongsLogic", ["$q", "$http", "$scope", function($q, $http, $scop
 		var deleteSong = function () {
 			$(this).parent(".song-result").remove();
 		};	
-		deleteSongButton.click(deleteSong);
+		// deleteSongButton.click(deleteSong);
+		$("body").on("click", ".delete", function () {
+			$(this).parent(".song-result").remove();
+		});
 
 		} else {
 			errorMessage.html("Add a song, artist, and album");
@@ -184,6 +192,10 @@ app.controller("SongsLogic", ["$q", "$http", "$scope", function($q, $http, $scop
 		}
 	});
 
+
+// $("body").on("click", ".delete", function () {
+// 			$(this).parent(".song-result").remove();
+// 		});
 // }); //end of jQuery
 }]);
 
