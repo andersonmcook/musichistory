@@ -1,7 +1,7 @@
 var app = angular.module("MusicHistory", []);
 
 // The next thing you want to do is create a controller, which is an Angular function where you write related logic for a feature. To start off with, we'll create a controller for displaying, creating, and deleting Todo items.
-app.controller("TodoCtrl", ["$q", "$http", "$scope", function($q, $http, $scope) {
+app.controller("SongsLogic", ["$q", "$http", "$scope", function($q, $http, $scope) {
 	$scope.title = "Welcome to your task list";
 	$scope.message = "You're here now";
 	$scope.yeah = "Oh yeah";
@@ -41,7 +41,7 @@ app.controller("TodoCtrl", ["$q", "$http", "$scope", function($q, $http, $scope)
 
   getSongs.then(function (songs) {
     console.log("songs",songs);
-    $scope.thesesongs = songs;
+    $scope.songs = songs;
   }, function (error) {
     console.log("Failed");
   });

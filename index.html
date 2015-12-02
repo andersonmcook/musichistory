@@ -25,16 +25,10 @@
 				</ul>
 			</nav> -->
 
-			<section ng-controller="TodoCtrl">
-				<div>
-			<!-- have the word in front of "in" match with below like "thing in todos" "thing.name"-->
-			  <ul ng-repeat="song in thesesongs">
-			    <li>{{ song.title }} by {{song.artist}} on {{song.album}}</li>
-			  </ul>
-			</div>
-			<div>
-
-
+			<section ng-controller="SongsLogic">
+				<div id="results" class="bordered">
+					<div class='song-result' ng-repeat="song in songs"><p class='song-name'>{{song.title}}</p><span class='results-line results-artist'>{{song.artist}}</span><span class='results-line results-divider'>|</span><span class='results-line results-album'>{{song.album}}</span><button class='delete'>Delete</button></div>
+				</div>
 			</section>
 				
 		<!-- <div id="flex-container"> -->
