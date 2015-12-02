@@ -17,6 +17,8 @@ app.controller("TodoCtrl", ["$q", "$http", "$scope", function($q, $http, $scope)
 	  { name: "Trim the weeds", complete: "complete" }
 	];
 
+
+
 	$scope.killTodo = function(todo) {
   // Do you see the PFM here of full object comparison?
 	  var todoIndex = $scope.todos.indexOf(todo); 
@@ -39,6 +41,7 @@ app.controller("TodoCtrl", ["$q", "$http", "$scope", function($q, $http, $scope)
 
   getSongs.then(function (songs) {
     console.log("songs",songs);
+    $scope.thesesongs = songs;
   }, function (error) {
     console.log("Failed");
   });

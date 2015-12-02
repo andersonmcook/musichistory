@@ -2,11 +2,11 @@
 <html lang ="en">
 	<head>
 	  <meta charset="utf-8">
-	  <title>Music History pt. 5</title>
+	  <title>Music History pt. Angular</title>
 	  <link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body ng-app="MusicHistory">
-			<nav id="navigation" class="bordered">
+<!-- 			<nav id="navigation" class="bordered">
 				<ul>
 					<li><a href="#" id="view-music-link">View Music</a></li>
 					<li>|</li>
@@ -23,7 +23,20 @@
 					<li>|</li>
 					<li><a href="#">Profile</a></li>
 				</ul>
-			</nav>
+			</nav> -->
+
+			<section ng-controller="TodoCtrl">
+				<div>
+			<!-- have the word in front of "in" match with below like "thing in todos" "thing.name"-->
+			  <ul ng-repeat="song in thesesongs">
+			    <li>{{ song.title }} by {{song.artist}} on {{song.album}}</li>
+			  </ul>
+			</div>
+			<div>
+
+
+			</section>
+				
 		<!-- <div id="flex-container"> -->
 		<!--
 			<div id="add-music" class="bordered display-none">
@@ -91,9 +104,9 @@
 					
 				</div>
 		</div>
-		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 		<script src="songs.js"></script> -->
 		<script src="lib/bower_components/angular/angular.min.js"></script>
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 		<script src="app/songs.js"></script>
 	</body>
 </html>
