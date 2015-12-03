@@ -4,5 +4,5 @@ app.controller("SongFormCtrl", ["$q", "$http", "$scope", "simple-songs", functio
 
 	$scope.addSong = function () {
 		simpleSongs.addSong($scope.newSong);
-	}
+	};
 }]);
