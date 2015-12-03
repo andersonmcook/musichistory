@@ -8,9 +8,9 @@
 	<body ng-app="MusicHistory">
 			<nav id="navigation" class="bordered">
 				<ul>
-					<li><a href="#" id="view-music-link">View Music</a></li>
+					<li><a href="#/songs/list" id="view-music-link">View Music</a></li>
 					<li>|</li>
-					<li><a href="#" id="add-music-link">Add Music</a></li>
+					<li><a href="#/songs/add" id="add-music-link">Add Music</a></li>
 					<li>|</li>
 					<li><a href="#" id="profile-link">Profile</a></li>
 				</ul>
@@ -26,8 +26,12 @@
 			</nav>
 
 				
-			<section ng-controller="SongsLogic">
-				<div id="results" class="bordered">
+			<section>
+				<div ng-view>
+					
+				</div>
+			</section>
+	<!-- 			<div id="results" class="bordered">
 					<div class='song-result' ng-repeat="song in songs"><p class='song-name'>{{song.title}}</p><span class='results-line results-artist'>{{song.artist}}</span><span class='results-line results-divider'>|</span><span class='results-line results-album'>{{song.album}}</span><button class='delete'>Delete</button></div>
 					<div class='song-result' ng-repeat="song in moreSongs"><p class='song-name'>{{song.title}}</p><span class='results-line results-artist'>{{song.artist}}</span><span class='results-line results-divider'>|</span><span class='results-line results-album'>{{song.album}}</span><button class='delete'>Delete</button></div>
 					<button class='more' ng-click="">More</button>
@@ -43,21 +47,21 @@
 				<div id="song-options-div" class="bordered form-style">
 					<label class="displayblock">Song length:<input type="range" name="song-length" class="displayblock center"></label>
 					<label class="displayblock">Artist:<select ng-model="SongsLogic" ng-options="song.artist for song in songs" name="artist" class="displayblock center">
-				<!-- 		<option value="alraune">Alraune</option>
+				<option value="alraune">Alraune</option>
 						<option value="baringTeeth">Baring Teeth</option>
 						<option value="converge">Converge</option>
 						<option value="dendriticArbor">Dendritic Arbor</option>
-						<option value="egyptrixx">Egyptrixx</option> -->
+						<option value="egyptrixx">Egyptrixx</option>
 					</select></label>
 					<label class="displayblock">Album:<select ng-model="SongsLogic" ng-options="song.album for song in songs" name="album" class="displayblock center">
 
-						<!-- <option value="alrauneAlbum">The Process of Self-Immolation</option>
+						<option value="alrauneAlbum">The Process of Self-Immolation</option>
 						<option value="baringTeethAlbum">Ghost Chorus Among The Ruins</option>
 						<option value="convergeAlbum">When Forever Comes Crashing</option>
 						<option value="dendriticArborAlbum">Romantic Love</option>
-						<option value="egyptrixxAlbum">A/B Til Infinity</option> -->
+						<option value="egyptrixxAlbum">A/B Til Infinity</option>
 					</select></label>
-			</section><!--
+			</section>
 					<p id="genre-title">Genre:</p>
 
 							<label class="smaller-margin"><input type="checkbox" name="genre" value="genreBlackMetal">Black Metal</label>
@@ -100,7 +104,11 @@
 		</div>
 		<script src="songs.js"></script> -->
 		<script src="lib/bower_components/angular/angular.min.js"></script>
-		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-		<script src="app/songs.js"></script>
+		<script src="lib/bower_components/angular-route/angular-route.js"></script>
+		<!-- <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> -->
+		<script src="app/app.js"></script>
+		<script src="app/factories/SongStorage.js"></script>
+		<script src="app/controllers/SongCtrl.js"></script>
+		<script src="app/controllers/SongFormCtrl.js"></script>
 	</body>
 </html>
