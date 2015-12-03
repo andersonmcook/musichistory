@@ -28,6 +28,7 @@ app.controller("SongsLogic", ["$q", "$http", "$scope", function($q, $http, $scop
 	  }
 	};
 
+// promise that gets songs from songs.json
   var getSongs = $q(function(resolve, reject) {
     $http.get('./data/songs.json')
     .success(
@@ -39,12 +40,38 @@ app.controller("SongsLogic", ["$q", "$http", "$scope", function($q, $http, $scop
     );
   });
 
+// promise that gets songs from songs2.json
+  var getMoreSongs = $q(function(resolve, reject) {
+    $http.get('./data/songs2.json')
+    .success(
+      function(objectFromJSONFile) {
+        resolve(objectFromJSONFile.songs);
+      }, function(error) {
+        reject(error);
+      }
+    );
+  });
+
+// after we've got songs from songs.json set songs to $scope.songs
   getSongs.then(function (songs) {
     console.log("songs",songs);
     $scope.songs = songs;
   }, function (error) {
     console.log("Failed");
   });
+
+
+$("body").on("click", ".more", function () {
+// after we've got songs from songs2.json set songs to $scope.moreSongs
+  getMoreSongs.then(function (songs) {
+    console.log("songs",songs);
+    $scope.moreSongs = songs;
+    $(".more").remove();
+  }, function (error) {
+    console.log("Failed");
+  });
+	
+});
 // }]);
 
 // remove song on click
