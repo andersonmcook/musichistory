@@ -1,4 +1,4 @@
-var app = angular.module("MusicHistory", ["ngRoute"]);
+var app = angular.module("MusicHistory", ["firebase", "ngRoute"]);
 
 
 app.config(['$routeProvider',
@@ -11,6 +11,10 @@ app.config(['$routeProvider',
       when('/songs/add', {
         templateUrl: 'partials/song-form.html',
         controller: 'SongFormCtrl'
+      }).
+      when('/songs/details/:songId', {
+      	templateUrl: "partials/song-detail.html",
+      	controller: "SongDetailCtrl"
       })
       .otherwise('/songs/list');
   }]);
