@@ -6,5 +6,9 @@ app.controller("SongCtrl", ["$q", "$http", "$scope", "simple-songs", "$firebaseA
 	var ref = new Firebase("https://blinding-inferno-367.firebaseio.com/songs/");
 	$scope.songs = $firebaseArray(ref);
 	console.log($scope.songs);
+
+	$scope.deleteSong = function(song) {
+		$scope.songs.$remove(song);
+	};
   
 }]);
