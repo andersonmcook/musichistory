@@ -1,6 +1,6 @@
 <div id="song-options-div" class="bordered form-style">
 	<!-- <label class="displayblock">Artist:<select name="artist" class="displayblock center"><option ng-repeat="song in songs | unique: 'artist'">{{song.artist}}</option></select></label> -->
-	<label class="displayblock">Artist:<select name="artist" class="displayblock center" ng-model="selectedArtist" ng-options="song.artist for song in songs | unique: 'artist' | filter: selectedAlbum"></select></label>
+	<label class="displayblock">Artist:<select name="artist" class="displayblock center" ng-model="selectedArtist" ng-options="song.artist for song in songs | unique: 'artist'"></select></label>
 <!-- 	<label class="displayblock">Album:<select name="artist" class="displayblock center"><option ng-repeat="song in songs | unique: 'album'">{{song.album}}</option></select></label> -->
 <label class="displayblock">Album:<select name="album" class="displayblock center" ng-model="selectedAlbum" ng-options="song.album for song in songs | unique: 'album' | filter: selectedArtist"></select></label>
 </div>
