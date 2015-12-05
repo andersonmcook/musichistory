@@ -1,4 +1,4 @@
-var app = angular.module("MusicHistory", ["firebase", "ngRoute"]);
+var app = angular.module("MusicHistory", ["angular.filter", "firebase", "ngRoute"]);
 
 
 app.config(['$routeProvider',
