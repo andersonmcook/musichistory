@@ -1,8 +1,13 @@
 <div id="song-options-div" class="bordered form-style">
-	<!-- <label class="displayblock">Artist:<select name="artist" class="displayblock center"><option ng-repeat="song in songs | unique: 'artist'">{{song.artist}}</option></select></label> -->
-	<label class="displayblock">Artist:<select name="artist" class="displayblock center" ng-model="selectedArtist" ng-options="song.artist for song in songs | unique: 'artist'"></select></label>
-<!-- 	<label class="displayblock">Album:<select name="artist" class="displayblock center"><option ng-repeat="song in songs | unique: 'album'">{{song.album}}</option></select></label> -->
-<label class="displayblock">Album:<select name="album" class="displayblock center" ng-model="selectedAlbum" ng-options="song.album for song in songs | unique: 'album' | filter: selectedArtist"></select></label>
+	<label class="displayblock">Artist:<select name="artist" class="displayblock center" ng-model="selectedArtist">
+		<option></option>
+		<option ng-repeat="song in songs | unique: 'artist'">{{song.artist}}</option>
+	</select></label>
+	<!-- <label class="displayblock">Artist:<select name="artist" class="displayblock center" ng-model="selectedArtist" ng-options="song.artist for song in songs | unique: 'artist'"></select></label> -->
+	<label class="displayblock">Album:<select name="artist" class="displayblock center" ng-model="selectedAlbum">
+		<option></option>
+		<option ng-repeat="song in songs | unique: 'album' | filter: selectedArtist">{{song.album}}</option></select></label>
+<!-- <label class="displayblock">Album:<select name="album" class="displayblock center" ng-model="selectedAlbum" ng-options="song.album for song in songs | unique: 'album' | filter: selectedArtist"></select></label> -->
 </div>
 <div id="results" class="bordered">
 	<div class='song-result' ng-repeat="song in songs | filter: selectedArtist | filter: selectedAlbum"><p class='song-name'><a href="#/songs/details/{{song.$id}}">{{song.title}}</a></p><span class='results-line results-artist'>{{song.artist}}</span><span class='results-line results-divider'>|</span><span class='results-line results-album'>{{song.album}}</span><button class='delete' ng-click="deleteSong(song)">&times;</button></div>
