@@ -7,6 +7,7 @@
 	<label class="displayblock">Album:<select name="artist" class="displayblock center" ng-model="selectedAlbum">
 		<option></option>
 		<option ng-repeat="song in songs | unique: 'album' | filter: selectedArtist">{{song.album}}</option></select></label>
+	<button ng-click="selectedArtist = undefined; selectedAlbum = undefined">Clear Filter</button>
 <!-- <label class="displayblock">Album:<select name="album" class="displayblock center" ng-model="selectedAlbum" ng-options="song.album for song in songs | unique: 'album' | filter: selectedArtist"></select></label> -->
 </div>
 <div id="results" class="bordered">
