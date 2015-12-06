@@ -3,7 +3,7 @@
 		<option></option>
 		<option ng-repeat="song in songs | unique: 'artist'">{{song.artist}}</option>
 	</select></label>
-	<!-- <label class="displayblock">Artist:<select name="artist" class="displayblock center" ng-model="selectedArtist" ng-options="song.artist for song in songs | unique: 'artist'"></select></label> -->
+	<!-- <label class="displayblock">Artist:<select name="artist" class="displayblock center" ng-model="selectedArtist" ng-options="song.artist for song in songs | unique: 'artist'"></select></label>-->
 	<label class="displayblock">Album:<select name="artist" class="displayblock center" ng-model="selectedAlbum">
 		<option></option>
 		<option ng-repeat="song in songs | unique: 'album' | filter: selectedArtist">{{song.album}}</option></select></label>
